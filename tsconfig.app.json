@@ -22,7 +22,7 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": false //se debe poner en false ya que swiper traer su propio tipado
   },
   "include": ["src"]
 }

@@ -1,42 +1,50 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+.navbar-custom {
+    background-color: #ffffff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.footer-custom {
+    background-color: #ffffff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info-custom{
+  background-color: #1A1A1A;
+  color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btnreservcita-custom{
+  background-color: #FFCC33;
+  color:#1A1A1A
 }
 
-.card {
-  padding: 2em;
+.cardService-custom{
+  background-color: #ffffff;
 }
 
-.read-the-docs {
-  color: #888;
+/* Contenedor general para centrar todo el contenido */
+.page-container {
+  max-width: 1200px;   /* No más ancho que 1200px */
+  width: 100%;
+  margin: 0 auto;      /* Centrado horizontal */
+  padding: 1rem;       /* Espaciado interno */
+}
+
+/* Opcional: evita que algo se salga accidentalmente */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Cambiar color de las flechas */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important; /* tu color */
+}
+
+/* Para cambiar el tamaño si quieres */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 30px !important;
 }
