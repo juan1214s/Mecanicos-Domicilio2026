@@ -14,7 +14,7 @@ export default function Banner() {
       pagination={{ clickable: true }}
       autoplay={{ delay: 4000 }}
       loop={true}
-      className="w-full rounded-xl mt-23"
+      className="w-full rounded-xl mt-29"
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative">

@@ -4,7 +4,7 @@ import "../App.css";
 export function FooteComponent() {
   return (
     <Footer container className="footer-custom page-container">
-      <FooterCopyright href="#" by="Flowbite™" year={2026} />
+      <FooterCopyright href="#" by="Mecanicos a Domicilio™" year={2026} />
       <FooterLinkGroup>
         <FooterLink href="#">About</FooterLink>
         <FooterLink href="#">Privacy Policy</FooterLink>

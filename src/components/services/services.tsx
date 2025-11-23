@@ -1,4 +1,5 @@
-import { Card } from "flowbite-react";
+import services from "../../utilities/services.json";
+import ServicesCard from "./servicesCard";
 
 export default function Services() {
   return (
@@ -16,58 +17,15 @@ export default function Services() {
       </div>
 
       {/* Grid de servicios */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
-        {/* Tarjeta 1 */}
-        <Card className="cardService-custom bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden max-w-sm mx-auto border-0">
-          <img
-            src="img/img2.webp"
-            alt="Cambio de Aceite"
-            className="w-full h-48 object-cover"
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
+        {services.map((service) => (
+          <ServicesCard
+            key={service.id}
+            title={service.title}
+            description={service.description}
+            img={service.img}
           />
-          <div className="p-4">
-            <h5 className="text-xl font-bold text-gray-900 mb-2">
-              Cambio de Aceite
-            </h5>
-            <p className="text-gray-700 text-sm">
-              Servicio rápido y profesional para mantener tu motor en perfecto
-              estado.
-            </p>
-          </div>
-        </Card>
-
-        <Card className="cardService-custom bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden max-w-sm mx-auto border-0">
-          <img
-            src="img/img2.webp"
-            alt="Cambio de Aceite"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h5 className="text-xl font-bold text-gray-900 mb-2">
-              Cambio de Aceite
-            </h5>
-            <p className="text-gray-700 text-sm">
-              Servicio rápido y profesional para mantener tu motor en perfecto
-              estado.
-            </p>
-          </div>
-        </Card>
-
-        <Card className="cardService-custom bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden max-w-sm mx-auto border-0">
-          <img
-            src="img/img2.webp"
-            alt="Cambio de Aceite"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h5 className="text-xl font-bold text-gray-900 mb-2">
-              Cambio de Aceite
-            </h5>
-            <p className="text-gray-700 text-sm">
-              Servicio rápido y profesional para mantener tu motor en perfecto
-              estado.
-            </p>
-          </div>
-        </Card>
+        ))}
       </div>
     </div>
   );
