@@ -50,7 +50,7 @@ export default function Header() {
           <div>
             <button
               className="font-bold py-2 px-4 rounded 
-              bg-[#FFCC33] hover:bg-yellow-400 text-black transition"
+              bg-[c] hover:bg-yellow-400 text-black transition"
             >
               Reservar cita
             </button>

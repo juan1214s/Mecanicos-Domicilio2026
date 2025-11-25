@@ -71,11 +71,5 @@
     "title": "Sincronización de Motor",
     "description": "Optimiza potencia, consumo y rendimiento.",
     "img": "img/services/sincronizacion-motor.png"
-  },
-  {
-    "id": 12,
-    "title": "Cambio de Termostato",
-    "description": "Regula la temperatura del motor y evita daños costosos.",
-    "img": "img/services/termostato.png"
   }
 ]
