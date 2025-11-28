@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./header";
-import { FooteComponent } from "./footer";
+import { FooterComponent } from "./footer";
 import "../App.css";
 
 export default function Layout() {
@@ -10,7 +10,7 @@ export default function Layout() {
       <main className="page-container">
         <Outlet />
       </main>
-      <FooteComponent />
+      <FooterComponent />
     </>
   );
 }

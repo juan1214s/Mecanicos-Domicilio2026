@@ -6,7 +6,7 @@ export default function Services() {
     <div className="bg-[#F6F6F6] flex flex-col justify-center py-10">
       {/* Título y descripción */}
       <div className="text-center px-4 mb-10">
-        <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+        <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
           Nuestros Servicios
         </h2>
         <p className="mx-auto max-w-2xl text-gray-700">

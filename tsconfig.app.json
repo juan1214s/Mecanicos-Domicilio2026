@@ -5,16 +5,18 @@
     "useDefineForClassFields": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "types": ["vite/client"],
+
+    "types": ["react", "react-dom", "vite/client"],   // ← 🔥 SOLUCIÓN PRINCIPAL
+
     "skipLibCheck": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,              // ← recomendado
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react-jsx",                               // ← OK
 
     /* Linting */
     "strict": true,
@@ -22,7 +24,7 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": false //se debe poner en false ya que swiper traer su propio tipado
+    "noUncheckedSideEffectImports": false
   },
   "include": ["src"]
 }

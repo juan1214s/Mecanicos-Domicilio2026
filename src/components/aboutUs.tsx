@@ -1,9 +1,10 @@
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import HandymanIcon from "@mui/icons-material/Handyman";
+import BuildIcon from "@mui/icons-material/Build";
 import tabContentjson from "../utilities/tabContent.json";
 import React from "react";
 
@@ -30,14 +31,42 @@ export default function AboutUs() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center w-full mt-6 ">
-          <Tabs value={value} onChange={handleChange}>
-            <Tab icon={<SupportAgentIcon />} label="Atención"/>
-            <Tab icon={<DirectionsCarIcon />} label="Servicio a Domicilio" />
-            <Tab icon={<VerifiedIcon />} label="Calidad" />
-            <Tab icon={<HandymanIcon />} label="Equipo" />
-          </Tabs>
-        </div>
+     <div className="flex justify-center w-full mt-6">
+  <Tabs
+    value={value}
+    onChange={handleChange}
+    variant="scrollable"
+    scrollButtons="auto"
+    allowScrollButtonsMobile
+    sx={{
+      "& .MuiTabs-scrollButtons": {
+        color: "#F5C32E", // color de las flechas
+      },
+    }}
+  >
+    <Tab
+      icon={<SupportAgentIcon sx={{ fontSize: 70 }} />}
+      label="Atención"
+      sx={{ mx: 6 }}
+    />
+    <Tab
+      icon={<DirectionsCarIcon sx={{ fontSize: 70 }} />}
+      label="Servicio a Domicilio"
+      sx={{ mx: 6 }}
+    />
+    <Tab
+      icon={<VerifiedIcon sx={{ fontSize: 70 }} />}
+      label="Calidad"
+      sx={{ mx: 6 }}
+    />
+    <Tab
+      icon={<HandymanIcon sx={{ fontSize: 70 }} />}
+      label="Equipo"
+      sx={{ mx: 6 }}
+    />
+  </Tabs>
+</div>
+
 
         {/* Contenido dinámico */}
         <div className="mt-6 shadow-md rounded-lg max-w-6xl mx-auto ">
@@ -48,6 +77,18 @@ export default function AboutUs() {
                 {tabContent[value].title}
               </h2>
               <p className="text-white">{tabContent[value].text}</p>
+              {tabContent[value].services && (
+                <ul className="text-white mt-4 grid grid-cols-1 gap-2">
+                  {tabContent[value].services?.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <BuildIcon
+                        style={{ color: "#F5C32E", fontSize: "0.9rem" }}
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {/* Columna derecha */}

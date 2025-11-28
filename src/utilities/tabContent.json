@@ -5,9 +5,18 @@
     "img": "/img/tab/img.webp"
   },
   {
-    "title": "Diagnóstico Profesional",
-    "text": "Contamos con equipos de diagnóstico automotriz de última generación que permiten detectar fallas de manera precisa y rápida. Gracias a nuestra experiencia y a la tecnología adecuada, evitamos reparaciones innecesarias y te damos una explicación clara de cada hallazgo. Elegirnos es obtener un diagnóstico confiable que ahorra tiempo y dinero.",
-    "img": "/img/tab/img2.jpg"
+    "title": "Servicio a Domicilio Garantizado",
+    "text": "Llegamos hasta donde estés con un servicio rápido, seguro y completamente equipado. Atendemos emergencias, mantenimientos y diagnósticos sin que tengas que mover tu vehículo. Con más de 10 años de experiencia brindando atención en sitio, garantizamos puntualidad, transparencia y soluciones profesionales directamente en tu ubicación.",
+    "img": "/img/tab/img3.jpg",
+    "services": [
+      "Mantenimiento preventivo y mecánica general",
+      "Diagnóstico automotriz y escáner a domicilio",
+      "Servicio eléctrico automotriz",
+      "Reparación de frenos y sistema de dirección",
+      "Desvare e inicio de batería",
+      "Venta e instalación de baterías",
+      "Cambio de aceite y filtros"
+    ]
   },
   {
     "title": "Servicio a Domicilio Garantizado",

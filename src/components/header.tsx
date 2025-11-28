@@ -8,7 +8,6 @@ import {
 } from "flowbite-react";
 import { Link } from "react-router-dom";
 import { ClockIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/24/outline";
-import logo from "../../public/img/logo2.png";
 
 export default function Header() {
   const [showInfo, setShowInfo] = useState(true);
@@ -50,7 +49,7 @@ export default function Header() {
           <div>
             <button
               className="font-bold py-2 px-4 rounded 
-              bg-[c] hover:bg-yellow-400 text-black transition"
+              bg-[#F5C32E] hover:bg-yellow-400 text-black transition"
             >
               Reservar cita
             </button>
@@ -65,7 +64,7 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between px-4 ">
           <NavbarBrand as={Link} href="/">
-            <img src={logo} className="h-14 w-auto sm:h-16" alt="Logo" />
+            <img src="/img/logo2.png" className="h-14 w-auto sm:h-16" alt="Logo" />
           </NavbarBrand>
 
           <NavbarToggle />
