@@ -5,7 +5,7 @@ import Reviews from "../components/reviews";
 import Services from "../components/services/services";
 import GoogleMapComponent from "../components/GoogleMapComponent";
 import CarInteractive from "../components/carInteractive";
-import CTASection from "../components/ctaSection.tsx";
+import CTASection from "../components/ctaSection";
 
 export default function Pages(){
     return(
