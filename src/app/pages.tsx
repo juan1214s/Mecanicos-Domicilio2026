@@ -18,7 +18,7 @@ export default function Pages(){
             <CarInteractive />
             <Reviews />
             <CTASection />
-            <GoogleMapComponent height="420px"/>
+            <GoogleMapComponent height="421px"/>
             <FAQ />
         </div>
         </>
