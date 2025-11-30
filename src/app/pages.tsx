@@ -4,10 +4,8 @@ import FAQ from "../components/faq";
 import Reviews from "../components/reviews";
 import Services from "../components/services/services";
 import GoogleMapComponent from "../components/GoogleMapComponent";
-import CTASection from "../components/ctaSection.tsx";
 import CarInteractive from "../components/carInteractive";
-
-
+import CTASection from "../components/ctaSection";
 
 export default function Pages(){
     return(
