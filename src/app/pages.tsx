@@ -1,10 +1,11 @@
 import AboutUs from "../components/aboutUs";
 import Banner from "../components/banner";
-import CTASection from "../components/CTASection";
+import CTASection from "../components/ctaSection";
 import FAQ from "../components/faq";
 import Reviews from "../components/reviews";
-import CarInteractive from "../components/CarInteractive";
+import CarInteractive from "../components/carInteractive";
 import Services from "../components/services/services";
+import GoogleMapComponent from "../components/GoogleMapComponent";
 
 
 export default function Pages(){
@@ -17,6 +18,7 @@ export default function Pages(){
             <CarInteractive />
             <Reviews />
             <CTASection />
+            <GoogleMapComponent height="420px"/>
             <FAQ />
         </div>
         </>
