@@ -7,7 +7,6 @@ import GoogleMapComponent from "../components/GoogleMapComponent";
 import CarInteractive from "../components/carInteractive";
 import CTASection from "../components/ctaSection";
 
-
 export default function Pages(){
     return(
         <>
