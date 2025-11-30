@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "name": "Carlos M.",
+      "text": "Llegaron a mi casa en 30 minutos. Diagnóstico rápido y reparación el mismo día. Súper recomendados.",
+      "stars": 5
+    },
+    {
+      "id": 2,
+      "name": "Juliana R.",
+      "text": "Transparencia total. Me mostraron el daño y el precio antes de reparar. Excelente servicio.",
+      "stars": 5
+    },
+    {
+      "id": 3,
+      "name": "Miguel S.",
+      "text": "Muy profesionales. Me salvaron un domingo cuando mi carro no encendía. Taller 100% confiable.",
+      "stars": 5
+    }
+]

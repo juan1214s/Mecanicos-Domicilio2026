@@ -31,42 +31,41 @@ export default function AboutUs() {
         </div>
 
         {/* Tabs */}
-     <div className="flex justify-center w-full mt-6">
-  <Tabs
-    value={value}
-    onChange={handleChange}
-    variant="scrollable"
-    scrollButtons="auto"
-    allowScrollButtonsMobile
-    sx={{
-      "& .MuiTabs-scrollButtons": {
-        color: "#F5C32E", // color de las flechas
-      },
-    }}
-  >
-    <Tab
-      icon={<SupportAgentIcon sx={{ fontSize: 70 }} />}
-      label="Atención"
-      sx={{ mx: 6 }}
-    />
-    <Tab
-      icon={<DirectionsCarIcon sx={{ fontSize: 70 }} />}
-      label="Servicio a Domicilio"
-      sx={{ mx: 6 }}
-    />
-    <Tab
-      icon={<VerifiedIcon sx={{ fontSize: 70 }} />}
-      label="Calidad"
-      sx={{ mx: 6 }}
-    />
-    <Tab
-      icon={<HandymanIcon sx={{ fontSize: 70 }} />}
-      label="Equipo"
-      sx={{ mx: 6 }}
-    />
-  </Tabs>
-</div>
-
+        <div className="flex justify-center w-full mt-6">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+            sx={{
+              "& .MuiTabs-scrollButtons": {
+                color: "#F5C32E", // color de las flechas
+              },
+            }}
+          >
+            <Tab
+              icon={<SupportAgentIcon sx={{ fontSize: 70 }} />}
+              label="Atención"
+              sx={{ mx: 4 }}
+            />
+            <Tab
+              icon={<DirectionsCarIcon sx={{ fontSize: 70 }} />}
+              label="Servicio a Domicilio"
+              sx={{ mx: 4 }}
+            />
+            <Tab
+              icon={<VerifiedIcon sx={{ fontSize: 70 }} />}
+              label="Calidad"
+              sx={{ mx: 4 }}
+            />
+            <Tab
+              icon={<HandymanIcon sx={{ fontSize: 70 }} />}
+              label="Equipo"
+              sx={{ mx: 4 }}
+            />
+          </Tabs>
+        </div>
 
         {/* Contenido dinámico */}
         <div className="mt-6 shadow-md rounded-lg max-w-6xl mx-auto ">

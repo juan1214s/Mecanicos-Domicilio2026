@@ -12,9 +12,9 @@ export default function Banner() {
       modules={[Navigation, Pagination, Autoplay]}
       navigation
       pagination={{ clickable: true }}
-      autoplay={{ delay: 4000 }}
+      autoplay={{ delay: 6000 }}
       loop={true}
-      className="w-full rounded-xl mt-30"
+      className="w-full rounded-xl mt-18 md:mt-30"
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative">
@@ -28,13 +28,13 @@ export default function Banner() {
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-6">
             {/* Título */}
-            <h1 className="text-white text-3xl md:text-4xl font-bold mb-2">
+            <h1 className="text-white text-2xl md:text-4xl font-bold mb-2">
               {slide.title}
             </h1>
 
             {/* Subtítulo */}
             {slide.subtitle && (
-              <p className="text-white text-lg md:text-xl max-w-2xl mb-4">
+              <p className="text-white text-sm md:text-xl max-w-2xl mb-4 p-5">
                 {slide.subtitle}
               </p>
             )}

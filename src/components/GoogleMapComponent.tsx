@@ -28,7 +28,10 @@ export default function GoogleMapComponent({
   });
 
   const [center, setCenter] = useState(initialCenter);
-  const [markerPos, setMarkerPos] = useState<{ lat: number; lng: number } | null>(initialCenter);
+  const [markerPos, setMarkerPos] = useState<{
+    lat: number;
+    lng: number;
+  } | null>(initialCenter);
 
   const onMapClick = useCallback((e: google.maps.MapMouseEvent) => {
     if (e.latLng) {
@@ -48,15 +51,23 @@ export default function GoogleMapComponent({
   }
 
   return (
-    <div className="rounded-xl overflow-hidden shadow-lg mt-16">
-      <GoogleMap
-        mapContainerStyle={containerStyle(height)}
-        center={center}
-        zoom={zoom}
-        onClick={onMapClick}
-      >
-        {markerPos && <Marker position={markerPos} />}
-      </GoogleMap>
-    </div>
+    <>
+      <div className="w-full flex justify-center mt-5">
+        <h2 className="text-2xl font-bold mb-3 text-gray-800">
+          📍 Ubicación de Nuestro Taller
+        </h2>
+      </div>
+
+      <div className="rounded-xl overflow-hidden shadow-lg mt-2">
+        <GoogleMap
+          mapContainerStyle={containerStyle(height)}
+          center={center}
+          zoom={zoom}
+          onClick={onMapClick}
+        >
+          {markerPos && <Marker position={markerPos} />}
+        </GoogleMap>
+      </div>
+    </>
   );
 }

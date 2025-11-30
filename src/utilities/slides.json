@@ -4,20 +4,20 @@
     "title": "Mecánicos a Domicilio. Llegamos hasta donde estés.",
     "subtitle": "Diagnóstico y reparación rápida realizada por técnicos certificados.",
     "ctaPrimary": "Solicitar mecánico ahora",
-    "ctaSecondary": "Cotizar servicio"
+    "ctaSecondary": ""
   },
   {
     "image": "/img/img2.webp",
     "title": "Reparaciones con garantía en tu ubicación.",
     "subtitle": "Confianza y seguridad para volver a la carretera sin preocupaciones.",
     "ctaPrimary": "Solicitar mecánico",
-    "ctaSecondary": "Ver servicios"
+    "ctaSecondary": ""
   },
   {
     "image": "/img/img3.jpg",
     "title": "Tecnología avanzada para un diagnóstico preciso.",
     "subtitle": "Resultados impecables con herramientas y equipo profesional.",
-    "ctaPrimary": "Solicitar diagnóstico",
-    "ctaSecondary": "Cotizar servicio"
+    "ctaPrimary": "Solicitar mecánico",
+    "ctaSecondary": ""
   }
 ]

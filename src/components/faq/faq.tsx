@@ -1,27 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import faqs from "../../utilities/faq.json";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      q: "¿En cuánto tiempo llegan?",
-      a: "Respondemos en menos de 30 minutos y enviamos un técnico inmediatamente según disponibilidad en tu zona."
-    },
-    {
-      q: "¿Qué zonas cubren?",
-      a: "Atendemos en Envigado, El Poblado, Laureles, Sabaneta, Itagüí, Medellín centro y gran parte del Valle de Aburrá."
-    },
-    {
-      q: "¿Cómo puedo pagar?",
-      a: "Puedes pagar por transferencia, Nequi o en efectivo directamente al técnico."
-    },
-    {
-      q: "¿El servicio tiene garantía?",
-      a: "Sí, todos nuestros trabajos tienen garantía respaldada por técnicos con más de 10 años de experiencia."
-    }
-  ];
 
   return (
     <section className=" px-4 bg-[#F6F6F6]">
