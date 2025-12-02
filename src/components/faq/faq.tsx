@@ -19,6 +19,7 @@ export default function FAQ() {
         {/* Imagen izquierda */}
         <div className="flex justify-center">
           <img
+          loading="lazy"
             src="/img/img4.jpg" 
             alt="Servicio Mecánico a Domicilio"
             className="w-full max-w-xl shadow-lg"

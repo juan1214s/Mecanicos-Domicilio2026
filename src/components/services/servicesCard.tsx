@@ -8,6 +8,7 @@ export default function ServicesCard({ title, description, img }: ServicesCardDt
         src={img}
         alt={title}
         className="w-full h-48 object-cover"
+        loading="lazy"
       />
 
       <div className="p-4">

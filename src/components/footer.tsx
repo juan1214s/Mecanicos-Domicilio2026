@@ -38,7 +38,6 @@ export function FooterComponent() {
               <ul className="space-y-3 text-gray-400 text-sm">
                 <li>Diagnóstico</li>
                 <li>Mantenimiento</li>
-                <li>Emergencias 24/7</li>
                 <li>Eléctrico & Mecánico</li>
               </ul>
             </div>

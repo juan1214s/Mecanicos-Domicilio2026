@@ -22,6 +22,7 @@ export default function Banner() {
           <img
             src={slide.image}
             alt={`Slide ${index + 1}`}
+            loading="lazy"
             className="h-[500px] w-full object-cover rounded-xl"
           />
 

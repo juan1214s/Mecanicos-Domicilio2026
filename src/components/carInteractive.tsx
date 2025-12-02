@@ -165,6 +165,7 @@ export default function CarInteractiveProUpdated() {
           {/* Imagen del carro */}
           <div className="relative w-full overflow-hidden rounded-xl">
             <img
+            loading="lazy"
               src="/img/car/autogpt.png"
               alt="Diagrama del vehículo"
               className="w-full h-auto object-contain"

@@ -1,20 +1,74 @@
 [
-    {
-      "id": 1,
-      "name": "Carlos M.",
-      "text": "Llegaron a mi casa en 30 minutos. Diagnóstico rápido y reparación el mismo día. Súper recomendados.",
-      "stars": 5
-    },
-    {
-      "id": 2,
-      "name": "Juliana R.",
-      "text": "Transparencia total. Me mostraron el daño y el precio antes de reparar. Excelente servicio.",
-      "stars": 5
-    },
-    {
-      "id": 3,
-      "name": "Miguel S.",
-      "text": "Muy profesionales. Me salvaron un domingo cuando mi carro no encendía. Taller 100% confiable.",
-      "stars": 5
-    }
+  {
+    "id": 4,
+    "name": "Laura P.",
+    "text": "Pensé que era la batería y resultó ser un problema en el alternador. Me explicaron todo súper claro y me cobraron lo justo.",
+    "stars": 5
+  },
+  {
+    "id": 5,
+    "name": "Andrés V.",
+    "text": "Llegaron al trabajo a revisarme el carro. No tuve que moverme ni perder tiempo. Excelente servicio.",
+    "stars": 5
+  },
+  {
+    "id": 6,
+    "name": "Sofía G.",
+    "text": "Me gustó que hicieron el diagnóstico frente a mí y no inventaron daños. Muy honestos.",
+    "stars": 4
+  },
+  {
+    "id": 7,
+    "name": "Felipe A.",
+    "text": "El carro hacía un ruido raro y en menos de una hora encontraron el problema. Me evitaron un daño más grande.",
+    "stars": 5
+  },
+  {
+    "id": 8,
+    "name": "Daniela M.",
+    "text": "Pensé que me iban a dejar tirada porque era de noche, pero llegaron rapidísimo. Muy agradecida.",
+    "stars": 5
+  },
+  {
+    "id": 9,
+    "name": "Jhonatan C.",
+    "text": "Buen servicio, pero podrían mejorar el tiempo de respuesta los fines de semana.",
+    "stars": 4
+  },
+  {
+    "id": 10,
+    "name": "Paola T.",
+    "text": "Me arreglaron una fuga de aceite que otros talleres no detectaron. Muy detallistas.",
+    "stars": 5
+  },
+  {
+    "id": 11,
+    "name": "Esteban L.",
+    "text": "El técnico muy respetuoso y paciente. Revisó todo con calma y me dio recomendaciones sin cobrar extra.",
+    "stars": 5
+  },
+  {
+    "id": 12,
+    "name": "Karen H.",
+    "text": "Todo bien, aunque el precio me pareció un poco alto. Aun así, el trabajo quedó muy bien hecho.",
+    "stars": 4
+  },
+  {
+    "id": 13,
+    "name": "Mauricio D.",
+    "text": "Los llamé porque el carro no encendía y resultó ser la bomba de gasolina. Me lo dejaron listo el mismo día.",
+    "stars": 5
+  },
+  {
+    "id": 14,
+    "name": "Brenda C.",
+    "text": "Muy cumplidos con la hora y muy amables. Da gusto encontrar servicio así.",
+    "stars": 5
+  },
+  {
+    "id": 15,
+    "name": "Héctor R.",
+    "text": "Buen servicio, aunque tardaron un poco más de lo esperado. Igual quedé satisfecho.",
+    "stars": 4
+  }
 ]
