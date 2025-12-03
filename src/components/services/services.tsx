@@ -26,7 +26,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.5,
-              delay: index * 0.15, // efecto cascada
+              delay: index * 0.10, // efecto cascada
             }}
             viewport={{ once: false, amount: 0.2 }} // se activa cada vez que aparece
           >

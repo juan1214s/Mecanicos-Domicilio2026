@@ -1,0 +1,61 @@
+{
+"values": [
+  {
+    "title": "Transparencia",
+    "text": "Mostramos el diagnóstico, los precios y cada paso del proceso antes de realizar cualquier reparación."
+  },
+  {
+    "title": "Rapidez y Eficiencia",
+    "text": "Atendemos en menos de 30 minutos y solucionamos la mayoría de fallas en el lugar."
+  },
+  {
+    "title": "Profesionalismo",
+    "text": "Técnicos certificados, con experiencia real y herramientas especializadas."
+  },
+  {
+    "title": "Calidad Garantizada",
+    "text": "Todos los trabajos cuentan con garantía escrita para tu tranquilidad."
+  },
+  {
+    "title": "Servicio Humano",
+    "text": "Trato amable, asesoría clara y acompañamiento honesto en toda la reparación."
+  },
+  {
+    "title": "Confianza",
+    "text": "Más de 12 años sirviendo a miles de clientes que confían plenamente en nuestro trabajo."
+  }
+],
+
+  "advantages": [
+    {
+      "icon": "⚡",
+      "title": "Llegamos en Menos de 30 Minutos",
+      "text": "Te asistimos rápidamente donde estés."
+    },
+    {
+      "icon": "💰",
+      "title": "Precios Justos",
+      "text": "Hasta un 40% más económicos que un taller tradicional."
+    },
+    {
+      "icon": "🛠️",
+      "title": "Técnicos Certificados",
+      "text": "Expertos con herramientas de última generación."
+    },
+    {
+      "icon": "📞",
+      "title": "Atención 24/7",
+      "text": "Disponibilidad total para emergencias."
+    },
+    {
+      "icon": "🛡️",
+      "title": "Garantía",
+      "text": "Todas las reparaciones tienen garantía escrita."
+    },
+    {
+      "icon": "🚗",
+      "title": "Servicio a Domicilio",
+      "text": "Vamos directo a tu casa, oficina o donde lo necesites."
+    }
+  ]
+}
