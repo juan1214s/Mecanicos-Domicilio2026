@@ -17,7 +17,7 @@ export default function ServicesCard({
 
       <div className="p-4">
         <h5 className="text-xl font-bold text-gray-900 mb-2">{title}</h5>
-        <p className="text-black text-sm">{description}</p>
+        <p className="text-black text-sm mb-2">{description}</p>
       </div>
     </Card>
   );
