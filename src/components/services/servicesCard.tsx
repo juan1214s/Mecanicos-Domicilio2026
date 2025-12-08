@@ -7,7 +7,7 @@ export default function ServicesCard({
   img,
 }: ServicesCardDto) {
   return (
-    <Card 
+    <Card
       className="
         cardService-custom bg-white rounded-lg shadow-md hover:shadow-xl 
         hover:scale-105 transition-transform duration-300 overflow-hidden 
@@ -15,7 +15,6 @@ export default function ServicesCard({
         min-h-fit md:h-[420px]         /* móvil crece, PC fijo */
       "
     >
-
       <img
         src={img}
         alt={title}
