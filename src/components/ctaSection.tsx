@@ -2,7 +2,6 @@ export default function CTASection() {
   return (
     <section className="w-full bg-[#2e2e2e] py-20">
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center text-center">
-
         {/* TITULO */}
         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
           ¿Tu vehículo falló?
@@ -18,12 +17,14 @@ export default function CTASection() {
 
         {/* BOTÓN */}
         <a
-          href="#contacto"
-          className="mt-8 inline-block bg-[#F5C32E] text-black font-semibold px-10 py-4 text-lg rounded-xl shadow-lg hover:bg-yellow-400 transition-all"
+          href="https://wa.me/573177123333?text=Hola,%20vengo%20desde%20la%20web.%20Necesito%20información%20sobre%20un%20servicio%20mecánico.%20🙂"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Solicitar ayuda ahora
+          <button className="m-3 font-bold py-2 px-4 rounded bg-[#F5C32E] hover:bg-yellow-400 text-black transition">
+            Solicitar mecánico
+          </button>
         </a>
-
       </div>
     </section>
   );

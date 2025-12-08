@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import services from "../../utilities/servicesTaller.json";
-import ServicesCard from "./servicesCard";
+import services from "../../utilities/servicesHome.json";
+import ServicesCard from "./servicesHomeCard";
 import { useState } from "react";
 
-export default function Services() {
+export default function ServicesHome() {
   const [visibleCount, setVisibleCount] = useState(8);
 
   const handleLoadMore = () => setVisibleCount((prev) => prev + 4);
@@ -19,7 +19,7 @@ export default function Services() {
       {/* Título */}
       <div className="text-center px-4 mb-10">
         <h2 className="text-4xl font-bold text-[#1A1A1A] mb-4 mt-12">
-          Nuestros Servicios en Taller
+          Nuestros Servicios a Domicilio
         </h2>
         <p className="mx-auto max-w-5xl text-black">
           Expertos en mecánica automotriz: mantenemos, reparamos y optimizamos

@@ -43,9 +43,14 @@ export default function Banner() {
             {/* Botones */}
             <div className="flex gap-4 mt-2">
               {slide.ctaPrimary && (
-                <button className="px-4 py-2 bg-[#FFCC33] text-black font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition">
+                <a
+                  href="//wa.me/573177123333?text=Hola,%20vengo%20desde%20la%20web.%20Necesito%20información%20sobre%20un%20servicio%20mecánico.%20🙂"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-[#FFCC33] text-black font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition"
+                >
                   {slide.ctaPrimary}
-                </button>
+                </a>
               )}
 
               {slide.ctaSecondary && (

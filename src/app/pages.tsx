@@ -7,14 +7,16 @@ import CarInteractive from "../components/carInteractive";
 import CTASection from "../components/ctaSection";
 import TapComponent from "../components/tap";
 import WhatsappFixedIcon from "../components/whatsapp";
+import ServicesHome from "../components/servicesHome/servicesHome";
 
 export default function Pages(){
     return(
         <>
         <div className="bg-[#F6F6F6]">
             <Banner />
-            <Services />
+            <ServicesHome />
             <TapComponent />
+            <Services />
             <CarInteractive />
             <Reviews />
             <CTASection />

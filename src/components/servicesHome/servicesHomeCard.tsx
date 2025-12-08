@@ -1,7 +1,7 @@
 import { Card } from "flowbite-react";
 import type ServicesCardDto from "../../Dto/serviceDto";
 
-export default function ServicesCard({
+export default function ServicesHomeCard({
   title,
   description,
   img,

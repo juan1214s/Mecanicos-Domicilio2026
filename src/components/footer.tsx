@@ -1,18 +1,11 @@
-import {
-  Facebook,
-  Instagram,
-  Phone,
-  MapPin
-} from "lucide-react";
+import { Facebook, Instagram, Phone, MapPin } from "lucide-react";
 
 export function FooterComponent() {
   return (
     <footer className="mt-24 bg-linear-to-t from-black to-[#151515] text-gray-300">
       <div className="mx-auto w-full max-w-7xl p-8 lg:py-14">
-
         {/* Top */}
         <div className="md:flex md:justify-between md:items-start gap-14">
-
           {/* Logo + descripción */}
           <div className="mb-10 md:mb-0 max-w-xs">
             <div className="flex items-center gap-3">
@@ -29,7 +22,6 @@ export function FooterComponent() {
 
           {/* Links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10">
-
             {/* Servicios */}
             <div>
               <h3 className="mb-4 text-sm font-semibold text-white uppercase tracking-wide">
@@ -76,11 +68,23 @@ export function FooterComponent() {
                 Redes
               </h3>
               <div className="flex gap-4 text-gray-400">
-                <Facebook className="hover:text-[#F5C32E] cursor-pointer" />
-                <Instagram className="hover:text-[#F5C32E] cursor-pointer" />
+                <a
+                  href="https://www.facebook.com/profile.php?id=61584955252749"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="hover:text-[#F5C32E] cursor-pointer" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/mecanicosdomiciliomedellin/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="hover:text-[#F5C32E] cursor-pointer" />
+                </a>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -89,7 +93,8 @@ export function FooterComponent() {
         {/* Bottom */}
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Mecánicos a Domicilio — Todos los derechos reservados.
+            © {new Date().getFullYear()} Mecánicos a Domicilio — Todos los
+            derechos reservados.
           </span>
 
           <p className="mt-4 sm:mt-0 text-sm text-gray-500">

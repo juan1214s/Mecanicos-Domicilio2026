@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "Mecanico a Domicilio",
+    "description": "Servicio profesional y confiable directamente en tu ubicación.",
+    "img": "img/servicesHome/mecanico.png"
+  },
+  {
+    "id": 2,
+    "title": "Sincronización de Motor",
+    "description": "Optimiza potencia, consumo y rendimiento.",
+    "img": "img/servicesHome/sincronizacion-motor.png"
+  },
+  {
+    "id": 3,
+    "title": "Arranque por Batería",
+    "description": "Recupera tu vehículo en minutos con ayuda profesional.",
+    "img": "img/servicesHome/desvare-bateria.png"
+  },
+  {
+    "id": 4,
+    "title": "Cambio de Aceite a Domicilio",
+    "description": "Mantén tu motor como nuevo con un servicio rápido y profesional.",
+    "img": "img/servicesHome/cambio-aceite.png"
+  },
+  {
+    "id": 5,
+    "title": "Cambio de Bujías",
+    "description": "Mejora el encendido y el rendimiento del motor al instante.",
+    "img": "img/servicesHome/bujia.png"
+  },
+  {
+    "id": 6,
+    "title": "Cambio de Batería a Domicilio",
+    "description": "Instalación rápida, segura y sin complicaciones.",
+    "img": "img/servicesHome/bateria.png"
+  },
+  {
+    "id": 7,
+    "title": "Cambio de radiador",
+    "description": "Optimiza potencia, consumo y rendimiento.",
+    "img": "img/servicesHome/radiador.png"
+  },
+  {
+    "id": 8,
+    "title": "Cambio de Filtro de Aire",
+    "description": "Mejora la respiración del motor y su eficiencia.",
+    "img": "img/servicesHome/filtro-aire-motor.png"
+  },
+  {
+    "id": 9,
+    "title": "Cambio de Filtro de aire acondicionado",
+    "description": "Respira aire limpio dentro de tu vehículo.",
+    "img": "img/servicesHome/filtro-aire.png"
+  },
+  {
+    "id": 10,
+    "title": "Cambio de Pastillas de Freno",
+    "description": "Frenado seguro y eficiente con repuestos de calidad.",
+    "img": "img/servicesHome/pastillas-freno.png"
+  },
+  {
+    "id": 11,
+    "title": "Desvare a Domicilio",
+    "description": "Llegamos rápido para sacarte de cualquier emergencia.",
+    "img": "img/servicesHome/desvare.png"
+  },
+  {
+    "id": 12,
+    "title": "Cambio de Tarro de Refrigerante",
+    "description": "Evita recalentamiento y cuida tu motor.",
+    "img": "img/servicesHome/tarro-refrigerante.png"
+  },
+  {
+    "id": 13,
+    "title": "Cambio de Termostato",
+    "description": "¿Tu carro se recalienta? Reemplazamos el termostato para mantener la temperatura ideal del motor, evitar daños por sobrecalentamiento y mejorar el rendimiento. Incluye revisión del sistema de refrigeración para un funcionamiento óptimo.",
+    "img": "img/servicesHome/termostato.png"
+  }
+]
