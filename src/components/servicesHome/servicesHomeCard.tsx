@@ -21,7 +21,7 @@ export default function ServicesHomeCard({
         loading="lazy"
         className="
           w-full object-cover 
-          h-40 md:h-56                  /* imagen pequeña en móvil, mayor en pc */
+          h-auto md:h-56                  /* imagen pequeña en móvil, mayor en pc */
           rounded-t-lg
         "
       />
