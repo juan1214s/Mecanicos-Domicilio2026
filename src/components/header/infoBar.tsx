@@ -22,7 +22,7 @@ export default function InfoBar({ showInfo }: { showInfo: boolean }) {
 
         <div className="flex items-center gap-2">
           <MapPinIcon className="h-5 w-5" />
-          <p>Cl. 41 #42-07, La Candelaria, Medellín</p>
+          <p>Cra. 45 #29-50, La Candelaria, Medellín, Antioquia</p>
         </div>
 
         <div>

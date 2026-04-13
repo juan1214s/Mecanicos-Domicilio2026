@@ -27,7 +27,7 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo */}
           <Link to="/" onClick={() => scrollToSection("")}>
-            <img src="/img/logo2.png" className="h-12 w-auto" alt="Logo" />
+            <img src="/img/logo2.webp" className="h-12 w-auto" alt="Logo" />
           </Link>
 
           {/* Desktop menu */}

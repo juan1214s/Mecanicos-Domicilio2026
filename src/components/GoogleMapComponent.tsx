@@ -15,7 +15,7 @@ const containerStyle = (height: string) => ({
 });
 
 export default function GoogleMapComponent({
-  initialCenter = { lat: 6.239882391443229, lng: -75.56534188568509 },
+  initialCenter = { lat: 6.2309011956953, lng: -75.57278711932226 },
   zoom = 15,
   height = "420px",
 }: Props) {

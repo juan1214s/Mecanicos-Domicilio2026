@@ -2,11 +2,6 @@ import { useEffect, useState } from "react";
 import InfoBar from "./infoBar";
 import Navbar from "./navBar";
 
-/**
- * Header: componente envolvente que:
- * - controla showInfo según scroll
- * - expone scrollToSection para que Navbar lo use
- */
 export default function Header() {
   const [showInfo, setShowInfo] = useState(true);
 

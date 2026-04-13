@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import GoogleMapComponent from "../../components/GoogleMapComponent";
+
 
 type FormState = {
   name: string;
@@ -217,14 +219,7 @@ export default function Contact() {
 
             {/* Mapa */}
             <div className="bg-white overflow-hidden rounded-xl shadow">
-              <iframe
-                width="100%"
-                height="250"
-                style={{ border: 0 }}
-                loading="lazy"
-                allowFullScreen
-                src="https://www.google.com/maps?q=6.239882391443229,-75.56534188568509&z=16&output=embed"
-              ></iframe>
+              <GoogleMapComponent ></GoogleMapComponent>
             </div>
 
             <div className="bg-white p-4 rounded-xl shadow text-gray-700 text-sm">

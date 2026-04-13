@@ -2,73 +2,73 @@
   {
     "id": 1,
     "title": "Ajuste y Revisión de Válvulas",
-    "description": "Evita pérdida de potencia, consumo elevado y fallas de encendido con calibración precisa y mantenimiento del sistema de válvulas.",
-    "img": "img/servicesTaller/valvulas.png"
+    "description": "Evita pérdida de potencia, consumo elevado y fallas de encendido.",
+    "img": "img/servicesTaller/valvulas.webp"
   },
   {
     "id": 2,
     "title": "Reparación de Motor",
     "description": "Reacondicionamiento, ajuste y reparación total para recuperar potencia y rendimiento.",
-    "img": "img/servicesTaller/motor.png"
+    "img": "img/servicesTaller/motor.webp"
   },
   {
     "id": 3,
     "title": "Reparación de Caja de Cambios",
     "description": "Corrección de ruidos, fugas y fallas en transmisión manual o automática.",
-    "img": "img/servicesTaller/caja.png"
+    "img": "img/servicesTaller/caja.webp"
   },
   {
     "id": 4,
     "title": "Reparación de Alternador",
     "description": "Solución a fallas de carga, ruidos o bajo voltaje para un sistema eléctrico saludable.",
-    "img": "img/servicesTaller/alternador.png"
+    "img": "img/servicesTaller/alternador.webp"
   },
   {
     "id": 5,
     "title": "Revisión de Compresión de Motor",
     "description": "Diagnóstico avanzado para detectar desgaste de anillos, válvulas o fugas internas.",
-    "img": "img/servicesTaller/compresion-motor.png"
+    "img": "img/servicesTaller/compresion-motor.webp"
   },
   {
     "id": 6,
     "title": "Cambio de Correa de Distribución",
     "description": "Reemplazo preventivo para evitar daño interno grave del motor y asegurar sincronización perfecta.",
-    "img": "img/servicesTaller/correa-distribucion.png"
+    "img": "img/servicesTaller/correa-distribucion.webp"
   },
   {
     "id": 7,
     "title": "Cambio de Llantas",
     "description": "Montaje, balanceo y alineación para mejor agarre, seguridad y duración del neumático.",
-    "img": "img/servicesTaller/llantas.png"
+    "img": "img/servicesTaller/llantas.webp"
   },
   {
     "id": 8,
     "title": "Reparación de Frenos",
     "description": "Servicio de revisión, rectificación y cambio de pastillas para un frenado seguro y eficiente.",
-    "img": "img/servicesTaller/frenos.png"
+    "img": "img/servicesTaller/frenos.webp"
   },
   {
     "id": 9,
     "title": "Cambio de Suspensión",
     "description": "Restablece el confort y agarre del vehículo con repuestos de calidad y calibración adecuada.",
-    "img": "img/servicesTaller/suspension.png"
+    "img": "img/servicesTaller/suspension.webp"
   },
   {
     "id": 10,
     "title": "Cambio de Amortiguadores",
     "description": "Recupera la suavidad en la conducción, reduce vibraciones y mejora la estabilidad en carretera.",
-    "img": "img/servicesTaller/amortiguadores.png"
+    "img": "img/servicesTaller/amortiguadores.webp"
   },
     {
     "id": 11,
     "title": "Cambio de Tarro de Refrigerante",
     "description": "Evita recalentamiento y cuida tu motor.",
-    "img": "img/services/tarro-refrigerante.png"
+    "img": "img/servicesHome/tarro-refrigerante.webp"
   },
   {
     "id": 12,
     "title": "Sincronización de Motor",
     "description": "Optimiza potencia, consumo y rendimiento.",
-    "img": "img/services/sincronizacion-motor.png"
+    "img": "img/servicesHome/sincronizacion-motor.webp"
   }
 ]
