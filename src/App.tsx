@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Layout from "./components/layout";
-import Pages from "./app/pages";
+import Layout from "./components/layout/layout";
+import Pages from "./pages/pages";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import ScrollToTop from "./components/ScrollToTop";
-import Contact from "./app/contact/contact";
-import AboutSection from "./app/aboutUs.tsx/aboutUs";
+import ScrollToTop from "./components/Ui/ScrollToTop";
+import Contact from "./pages/contact/contact";
+import AboutSection from "./pages/aboutUs.tsx/aboutUs";
 
 function App() {
   const theme = createTheme({

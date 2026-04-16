@@ -1,3 +1,5 @@
+import { AnalyticsEvents, EventLabels, PageNames } from "../../constants/enums";
+
 export default function CTASection() {
   return (
     <section className="w-full bg-[#2e2e2e] py-20">
@@ -17,13 +19,17 @@ export default function CTASection() {
 
         {/* BOTÓN */}
         <a
-          href="https://wa.me/573177123333?text=Hola,%20vengo%20desde%20la%20web.%20Necesito%20información%20sobre%20un%20servicio%20mecánico.%20🙂"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="tel:+573177123333" onClick={() => {
+            window.dataLayer?.push({
+              event: AnalyticsEvents.CALL_CLICK,
+              event_category: "conversion",
+              event_label: EventLabels.CTASECTION,
+              page_name: PageNames.HOME,
+            })
+          }}
+          className="px-6 py-3 mt-3 bg-[#FFCC33] text-black font-bold rounded-lg shadow-xl hover:scale-105 transition"
         >
-          <button className="m-3 font-bold py-2 px-4 rounded bg-[#F5C32E] hover:bg-yellow-400 text-black transition">
-            Solicitar mecánico
-          </button>
+          Llámanos ahora
         </a>
       </div>
     </section>

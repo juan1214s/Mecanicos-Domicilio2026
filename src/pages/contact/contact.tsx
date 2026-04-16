@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import GoogleMapComponent from "../../components/GoogleMapComponent";
+import GoogleMapComponent from "../../components/Ui/GoogleMapComponent";
+import { AnalyticsEvents, EventLabels, PageNames } from "../../constants/enums";
 
 
 type FormState = {
@@ -51,21 +52,42 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!validate()) return;
 
     setSubmitting(true);
     setSuccess(null);
 
     try {
+      // 🔥 convertir a formato compatible con Formspree
+      const body = new URLSearchParams({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        service: form.service,
+        address: form.address,
+        preferredTime: form.preferredTime,
+        message: form.message,
+      }).toString();
+
       const res = await fetch("https://formspree.io/f/mdkqladn", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
+        },
+        body,
       });
 
-      if (!res.ok) throw new Error("Error");
+      const data = await res.json();
 
+      if (!res.ok || !data.ok) {
+        throw new Error("Error en el envío");
+      }
+
+      // ✅ éxito
       setSuccess("Mensaje enviado con éxito. Te contactaremos pronto 😄");
+
       setForm({
         name: "",
         phone: "",
@@ -75,13 +97,26 @@ export default function Contact() {
         preferredTime: "",
         message: "",
       });
+
       setErrors({});
+
+      // limpiar mensaje después de 5s
+      setTimeout(() => setSuccess(null), 5000);
+
     } catch (err) {
       setSuccess("❗ Hubo un error. Intenta de nuevo o escríbenos por WhatsApp.");
     } finally {
       setSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    window.dataLayer?.push({
+      event: "page_view",
+      page_path: window.location.pathname,
+      page_title: document.title
+    });
+  }, []);
 
   return (
     <section id="contact" className="bg-white py-16 mt-5 md:mt-15">
@@ -100,7 +135,7 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          
+
           {/* ==== FORMULARIO ==== */}
           <motion.form
             onSubmit={handleSubmit}
@@ -179,9 +214,26 @@ export default function Contact() {
                 type="button"
                 onClick={() => {
                   const text = encodeURIComponent(
-                    `Hola, tengo una consulta:\n👤 Nombre: ${form.name}\n📞 Teléfono: ${form.phone}\n📌 Tema: ${form.service}\n💬 Mensaje: ${form.message}`
+                    `Hola 👋, necesito un servicio de mecánico a domicilio.
+
+                    👤 Nombre: ${form.name}
+                    📞 Teléfono: ${form.phone}
+                    🚗 Servicio: ${form.service}
+                    💬 Descripción:
+                    ${form.message}`
                   );
-                  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+                  window.dataLayer?.push({
+                    event: AnalyticsEvents.FORM_SUBMIT,
+                    event_category: "conversion",
+                    event_label: EventLabels.CONTACT_FORM,
+                    page_name: PageNames.CONTACT,
+                  });
+
+                  // abrir WhatsApp
+                  window.open(
+                    `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`,
+                    "_blank"
+                  );
                 }}
                 className="px-4 py-2 bg-green-600 text-white rounded-lg font-semibold shadow hover:brightness-95"
               >
@@ -206,12 +258,6 @@ export default function Contact() {
                 Teléfono:&nbsp;
                 <a href={`tel:${PHONE_NUMBER}`} className="font-medium text-blue-600">
                   {PHONE_NUMBER}
-                </a>
-              </p>
-              <p className="text-gray-600">
-                WhatsApp:&nbsp;
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} className="font-medium text-green-600" target="_blank">
-                  Enviar mensaje
                 </a>
               </p>
               <p className="text-gray-600 mt-2">Horarios: <b>Lun - Vie 05:00 - 18:00</b></p>

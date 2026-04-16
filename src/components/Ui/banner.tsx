@@ -1,0 +1,63 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import slides from "../../utilities/slides.json";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "../../App.css";
+import { AnalyticsEvents, EventLabels, PageNames } from "../../constants/enums";
+
+export default function Banner() {
+  return (
+    <div className="relative">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 6000 }}
+        loop={true}
+        className="w-full rounded-xl mt-18 md:mt-30"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index} className="relative">
+            <img
+              src={slide.image}
+              alt={`Slide ${index + 1}`}
+              loading="lazy"
+              className="h-[500px] w-full object-cover rounded-xl"
+            />
+
+            <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-6">
+              <h1 className="text-white text-2xl md:text-4xl font-bold mb-2">
+                {slide.title}
+              </h1>
+
+              {slide.subtitle && (
+                <p className="text-white text-sm md:text-xl max-w-2xl mb-4 p-5">
+                  {slide.subtitle}
+                </p>
+              )}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* CTA GLOBAL */}
+      <div className="absolute bottom-35 left-1/2 -translate-x-1/2 z-10">
+        <a
+          href="tel:+573177123333" onClick={()=>{
+            window.dataLayer?.push({
+              event: AnalyticsEvents.CALL_CLICK,
+              event_category: "conversion",
+              event_label: EventLabels.BANNER,
+              page_name: PageNames.HOME,
+            })
+          }}
+          className="px-6 py-3 bg-[#FFCC33] text-black font-bold rounded-lg shadow-xl hover:scale-105 transition"
+        >
+          Llámanos ahora
+        </a>
+      </div>
+    </div>
+  );
+}
