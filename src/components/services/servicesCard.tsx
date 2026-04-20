@@ -17,8 +17,10 @@ export default function ServicesCard({
     >
       <img
         src={img}
-        alt={title}
+        alt={`Imagen del servicio: ${title}`}
         loading="lazy"
+        width={400}
+        height={224}
         className="
           w-full object-cover 
           h-auto md:h-56                  /* imagen pequeña en móvil, mayor en pc */

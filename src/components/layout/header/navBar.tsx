@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 type Props = {
   showInfo: boolean;
@@ -9,21 +8,21 @@ type Props = {
 
 export default function Navbar({ showInfo, scrollToSection }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const navigate = useNavigate();
 
-  const handleScrollLink =
-    (id: string) =>
-      (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-        e.preventDefault();
-        setMenuOpen(false);
+  // ✅ versión clara y segura
+  function handleScrollLink(id: string) {
+    return (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+      e.preventDefault();
+      setMenuOpen(false);
 
-        if (window.location.pathname !== "/") {
-          navigate("/", { state: { scrollTo: id } });
-        } else {
-          scrollToSection(id);
-        }
-      };
+      if (window.location.pathname !== "/") {
+        navigate("/", { state: { scrollTo: id } });
+      } else {
+        scrollToSection(id);
+      }
+    };
+  }
 
   return (
     <>
@@ -32,28 +31,26 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
         ${showInfo ? "top-0 md:top-10" : "top-0"}`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+          
           {/* Logo */}
           <Link to="/" onClick={() => scrollToSection("")}>
-            <img loading="lazy" src="/img/logo2.webp" className="h-12 w-auto" alt="Logo" />
+            <img
+              src="/img/logo2.webp"
+              className="h-12 w-auto"
+              alt="Mecánicos a domicilio Medellín"
+            />
           </Link>
 
           {/* Desktop menu */}
           <nav className="hidden md:flex gap-8 text-black font-medium">
-            {/* Usamos <a> con href para accesibilidad, pero interceptamos el click */}
-            <a
-              href="#top"
-              onClick={handleScrollLink("")}
-              className="hover:text-yellow-500"
-            >
+            <a href="#top" onClick={handleScrollLink("")} className="hover:text-yellow-500">
               Inicio
             </a>
-            <a
-              href="#services"
-              onClick={handleScrollLink("services")}
-              className="hover:text-yellow-500"
-            >
+
+            <a href="#services" onClick={handleScrollLink("services")} className="hover:text-yellow-500">
               Servicios
             </a>
+
             <Link to="/contact" className="hover:text-yellow-500">
               Contáctanos
             </Link>
@@ -63,37 +60,28 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
             </Link>
           </nav>
 
-          {/* Mobile hamburger */}
+          {/* Mobile button */}
           <button
             className="md:hidden p-2"
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menú"
           >
-            <svg
-              className="h-8 w-8 text-black"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+            <svg className="h-8 w-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
       </header>
 
-      {/* Overlay mobile */}
+      {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 z-40 transition-all duration-300 md:hidden ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+        className={`fixed inset-0 bg-black/50 z-40 transition-all duration-300 md:hidden ${
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
         onClick={() => setMenuOpen(false)}
       />
 
-      {/* Bottom sheet mobile */}
+      {/* Mobile menu */}
       <div
         className={`fixed bottom-0 left-0 w-full bg-white rounded-t-2xl shadow-xl z-50 p-6 transform transition-transform duration-300 md:hidden
         ${menuOpen ? "translate-y-0" : "translate-y-full"}`}
@@ -101,18 +89,8 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold">Menú</h2>
           <button onClick={() => setMenuOpen(false)} aria-label="Cerrar menú">
-            <svg
-              className="h-7 w-7"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-            >
-              <path
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+            <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -121,16 +99,13 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
           <a href="#top" onClick={handleScrollLink("")}>
             Inicio
           </a>
+
           <a href="#services" onClick={handleScrollLink("services")}>
             Servicios
           </a>
-          <Link to="/contact" className="hover:text-yellow-500">
-            Contáctanos
-          </Link>
 
-          <Link to="/aboutUs" className="hover:text-yellow-500">
-            Sobre nosotros
-          </Link>
+          <Link to="/contact">Contáctanos</Link>
+          <Link to="/aboutUs">Sobre nosotros</Link>
         </nav>
       </div>
     </>

@@ -8,34 +8,10 @@ export default function CarInteractiveProUpdated() {
   const [selectedPart, setSelectedPart] = useState<PartId | null>(null);
 
   const parts = useMemo(() => [
-    {
-      id: "gearbox" as PartId,
-      label: "Reparación de Caja de Cambios",
-      icon: <Wrench />,
-      x: "45%",
-      y: "60%",
-    },
-    {
-      id: "alternator" as PartId,
-      label: "Reparación de Alternador",
-      icon: <Cable />,
-      x: "10%",
-      y: "50%",
-    },
-    {
-      id: "engine" as PartId,
-      label: "Reparación de Motor",
-      icon: <Cog />,
-      x: "28%",
-      y: "50%",
-    },
-    {
-      id: "brakes" as PartId,
-      label: "Sistema de Frenos",
-      icon: <Disc />,
-      x: "78%",
-      y: "65%",
-    },
+    { id: "gearbox" as PartId, label: "Reparación de Caja de Cambios", icon: <Wrench />, x: "45%", y: "60%" },
+    { id: "alternator" as PartId, label: "Reparación de Alternador", icon: <Cable />, x: "10%", y: "50%" },
+    { id: "engine" as PartId, label: "Reparación de Motor", icon: <Cog />, x: "28%", y: "50%" },
+    { id: "brakes" as PartId, label: "Sistema de Frenos", icon: <Disc />, x: "78%", y: "65%" },
   ], []);
 
   const selected = useMemo(
@@ -44,14 +20,10 @@ export default function CarInteractiveProUpdated() {
   );
 
   const descriptions: Record<PartId, string> = {
-    gearbox:
-      "La caja de cambios requiere mantenimiento preciso para evitar ruidos, pérdida de fuerza o dificultad al cambiar.",
-    alternator:
-      "El alternador mantiene cargada la batería y alimenta el sistema eléctrico.",
-    engine:
-      "Reparación y diagnóstico del motor: fugas, ruidos y desempeño general.",
-    brakes:
-      "Revisión de pastillas, discos y sistema completo de frenos.",
+    gearbox: "La caja de cambios requiere mantenimiento preciso para evitar ruidos, pérdida de fuerza o dificultad al cambiar.",
+    alternator: "El alternador mantiene cargada la batería y alimenta el sistema eléctrico.",
+    engine: "Reparación y diagnóstico del motor: fugas, ruidos y desempeño general.",
+    brakes: "Revisión de pastillas, discos y sistema completo de frenos.",
   };
 
   return (
@@ -67,10 +39,9 @@ export default function CarInteractiveProUpdated() {
           <div className="rounded-2xl p-4 shadow-sm sticky top-24">
             <div className="flex flex-col gap-3">
               {parts.map((p) => (
-                <motion.button
+                <button
                   key={p.id}
                   onClick={() => setSelectedPart(p.id)}
-                  whileHover={{ scale: 1.03 }}
                   className={`flex items-center gap-3 px-3 py-2 rounded-lg ${
                     selectedPart === p.id
                       ? "bg-yellow-200"
@@ -87,7 +58,7 @@ export default function CarInteractiveProUpdated() {
                   </div>
 
                   <ChevronRight />
-                </motion.button>
+                </button>
               ))}
             </div>
           </div>
@@ -96,7 +67,6 @@ export default function CarInteractiveProUpdated() {
         {/* DERECHA */}
         <div className="relative flex-1">
 
-          {/* PANEL INFO */}
           {selected && (
             <motion.div
               initial={{ opacity: 0, y: -6 }}
@@ -113,19 +83,19 @@ export default function CarInteractiveProUpdated() {
           {/* IMAGEN */}
           <div className="relative">
             <img
+              src="/img/car/autogpt.webp"
+              alt="Ilustración interactiva de partes del vehículo"
+              width={800}
+              height={500}
               loading="lazy"
               decoding="async"
-              width="800"
-              height="500"
-              src="/img/car/autogpt.webp"
               className="w-full object-contain"
             />
 
             {parts.map((p) => (
-              <motion.button
+              <button
                 key={p.id}
                 onClick={() => setSelectedPart(p.id)}
-                whileHover={{ scale: 1.05 }}
                 className="absolute -translate-x-1/2 -translate-y-1/2"
                 style={{ left: p.x, top: p.y }}
               >
@@ -138,7 +108,7 @@ export default function CarInteractiveProUpdated() {
                 >
                   {p.icon}
                 </div>
-              </motion.button>
+              </button>
             ))}
           </div>
         </div>

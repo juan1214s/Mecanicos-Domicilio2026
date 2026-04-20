@@ -9,7 +9,7 @@ import { AnalyticsEvents, EventLabels, PageNames } from "../../constants/enums";
 
 export default function Banner() {
   return (
-    <div className="relative">
+    <div className="relative" role="main">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -22,9 +22,11 @@ export default function Banner() {
           <SwiperSlide key={index} className="relative">
             <img
               src={slide.image}
-              alt={`Slide ${index + 1}`}
+              alt={`Banner principal: ${slide.title || `Slide ${index + 1}`}`}
               loading={index === 0 ? "eager" : "lazy"}
               fetchPriority={index === 0 ? "high" : "low"}
+              width={1200}
+              height={500}
               className="h-[500px] w-full object-cover rounded-xl"
             />
 
@@ -46,7 +48,9 @@ export default function Banner() {
       {/* CTA GLOBAL */}
       <div className="absolute bottom-35 left-1/2 -translate-x-1/2 z-10">
         <a
-          href="tel:+573177123333" onClick={() => {
+          href="tel:+573177123333"
+          aria-label="Llamar al número de atención al cliente 3177123333"
+          onClick={() => {
             window.dataLayer?.push({
               event: AnalyticsEvents.CALL_CLICK,
               event_category: "conversion",

@@ -99,7 +99,9 @@ export default function TapComponent() {
             <img
               loading="lazy"
               src={tabContent[value].img}
-              alt={tabContent[value].title}
+              alt={`Imagen de la pestaña: ${tabContent[value].title}`}
+              width={600}
+              height={400}
               className="w-full max-w-xl"
             />
           </div>
