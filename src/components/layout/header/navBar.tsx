@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   showInfo: boolean;
@@ -9,14 +10,20 @@ type Props = {
 export default function Navbar({ showInfo, scrollToSection }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // handler que previene navegación por Link y hace scroll en la página
+  const navigate = useNavigate();
+
   const handleScrollLink =
     (id: string) =>
-    (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-      e.preventDefault();
-      setMenuOpen(false);
-      scrollToSection(id);
-    };
+      (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+        e.preventDefault();
+        setMenuOpen(false);
+
+        if (window.location.pathname !== "/") {
+          navigate("/", { state: { scrollTo: id } });
+        } else {
+          scrollToSection(id);
+        }
+      };
 
   return (
     <>
@@ -27,7 +34,7 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo */}
           <Link to="/" onClick={() => scrollToSection("")}>
-            <img src="/img/logo2.webp" className="h-12 w-auto" alt="Logo" />
+            <img loading="lazy" src="/img/logo2.webp" className="h-12 w-auto" alt="Logo" />
           </Link>
 
           {/* Desktop menu */}
@@ -81,9 +88,8 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
 
       {/* Overlay mobile */}
       <div
-        className={`fixed inset-0 bg-black/50 z-40 transition-all duration-300 md:hidden ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black/50 z-40 transition-all duration-300 md:hidden ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setMenuOpen(false)}
       />
 

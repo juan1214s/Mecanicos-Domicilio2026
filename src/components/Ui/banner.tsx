@@ -14,7 +14,7 @@ export default function Banner() {
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 6000 }}
+        autoplay={window.innerWidth > 768 ? { delay: 6000 } : false}
         loop={true}
         className="w-full rounded-xl mt-18 md:mt-30"
       >
@@ -23,7 +23,8 @@ export default function Banner() {
             <img
               src={slide.image}
               alt={`Slide ${index + 1}`}
-              loading="lazy"
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "low"}
               className="h-[500px] w-full object-cover rounded-xl"
             />
 
@@ -45,7 +46,7 @@ export default function Banner() {
       {/* CTA GLOBAL */}
       <div className="absolute bottom-35 left-1/2 -translate-x-1/2 z-10">
         <a
-          href="tel:+573177123333" onClick={()=>{
+          href="tel:+573177123333" onClick={() => {
             window.dataLayer?.push({
               event: AnalyticsEvents.CALL_CLICK,
               event_category: "conversion",

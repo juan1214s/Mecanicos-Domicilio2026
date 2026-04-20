@@ -9,8 +9,6 @@ export function FooterComponent() {
           {/* Logo + descripción */}
           <div className="mb-10 md:mb-0 max-w-xs">
             <div className="flex items-center gap-3">
-              {/* Logo si lo deseas */}
-              {/* <img src="/img/logo.png" className="w-12" /> */}
               <h2 className="text-3xl font-bold text-white">
                 Mecánicos a Domicilio
               </h2>

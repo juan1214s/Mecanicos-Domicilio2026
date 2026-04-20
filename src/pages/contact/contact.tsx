@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import GoogleMapComponent from "../../components/Ui/GoogleMapComponent";
 import { AnalyticsEvents, EventLabels, PageNames } from "../../constants/enums";
+import { lazy, Suspense } from "react";
 
+const GoogleMapComponent = lazy(() => import("../../components/Ui/GoogleMapComponent"));
 
 type FormState = {
   name: string;
@@ -15,6 +16,12 @@ type FormState = {
 };
 
 export default function Contact() {
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowMap(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
   const [form, setForm] = useState<FormState>({
     name: "",
     phone: "",
@@ -265,7 +272,11 @@ export default function Contact() {
 
             {/* Mapa */}
             <div className="bg-white overflow-hidden rounded-xl shadow">
-              <GoogleMapComponent ></GoogleMapComponent>
+              {showMap && (
+                <Suspense fallback={<div className="p-4">Cargando mapa...</div>}>
+                  <GoogleMapComponent />
+                </Suspense>
+              )}
             </div>
 
             <div className="bg-white p-4 rounded-xl shadow text-gray-700 text-sm">

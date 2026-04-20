@@ -1,4 +1,4 @@
-// src/components/GoogleMapComponent.tsx
+
 /// <reference types="google.maps" />
 import { useCallback, useState } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
