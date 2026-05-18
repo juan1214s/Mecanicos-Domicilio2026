@@ -11,8 +11,8 @@ export default function InfoBar({ showInfo }: { showInfo: boolean }) {
       <div className="w-full flex flex-col md:flex-row justify-between items-center gap-3 px-4">
         <div className="flex items-center gap-2">
           <ClockIcon className="h-5 w-5" />
-          <p className="mx-2">Lun - Vie: 05:00 AM – 06:00 PM</p>
-          <p>Sáb - Dom: 06:00 AM – 12:00 PM</p>
+          <p className="mx-2">Lun - Vie: 07:00 AM – 05:00 PM</p>
+          <p>Sáb - Dom: 07:00 AM – 02:00 PM</p>
         </div>
 
         <div className="flex items-center gap-2">

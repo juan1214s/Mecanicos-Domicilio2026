@@ -1,4 +1,4 @@
-import data from "../../utilities/about.json";
+import data from "../../assets/utilities/about.json";
 
 export default function AboutSection() {
   return (

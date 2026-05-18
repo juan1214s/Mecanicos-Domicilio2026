@@ -5,7 +5,7 @@ import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import HandymanIcon from "@mui/icons-material/Handyman";
 import BuildIcon from "@mui/icons-material/Build";
-import tabContentjson from "../../utilities/tabContent.json";
+import tabContentjson from "../../assets/utilities/tabContent.json";
 import React from "react";
 import { motion } from "framer-motion";
 

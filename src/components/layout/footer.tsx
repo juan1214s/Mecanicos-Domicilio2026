@@ -38,8 +38,8 @@ export function FooterComponent() {
                 Horarios de atención
               </h3>
               <ul className="space-y-3 text-gray-400 text-sm">
-                <li>Lun - Vie: 05:00 AM – 06:00 PM</li>
-                <li>Sáb - Dom: 06:00 AM – 12:00 PM</li>
+                <li>Lun - Vie: 07:00 AM – 05:00 PM</li>
+                <li>Sáb - Dom: 07:00 AM – 02:00 PM</li>
               </ul>
             </div>
 

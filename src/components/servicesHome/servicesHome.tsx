@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import services from "../../utilities/servicesHome.json";
+import services from "../../assets/utilities/servicesHome.json";
 import ServicesCard from "./servicesHomeCard";
 import { useState } from "react";
 
@@ -35,7 +35,7 @@ export default function ServicesHome() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.2,
               delay: index * 0.1,
             }}
             viewport={{ once: false, amount: 0.2 }}

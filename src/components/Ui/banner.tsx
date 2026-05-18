@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import slides from "../../utilities/slides.json";
+import slides from "../../assets/utilities/slides.json";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

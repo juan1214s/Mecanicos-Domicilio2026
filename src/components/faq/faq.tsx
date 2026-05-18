@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import faqs from "../../utilities/faq.json";
+import faqs from "../../assets/utilities/faq.json";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);

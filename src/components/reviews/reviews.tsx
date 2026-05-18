@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import comments from "../../utilities/comments.json";
+import comments from "../../assets/utilities/comments.json";
 import ReviewsCard from "./reviewsCard";
 
 export default function Reviews() {
