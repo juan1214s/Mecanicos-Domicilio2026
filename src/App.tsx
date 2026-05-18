@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import ScrollToTop from "./components/Ui/ScrollToTop";
 import Contact from "./pages/contact/contact";
 import AboutSection from "./pages/aboutUs.tsx/aboutUs";
+import ServicesPage from "./pages/services/services";
 
 function App() {
   const theme = createTheme({
@@ -40,6 +41,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Pages />} />
+            <Route path="/servicios" element={<ServicesPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/aboutUs" element={<AboutSection />} />
           </Route>

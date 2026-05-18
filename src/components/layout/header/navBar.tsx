@@ -10,6 +10,8 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  const handleCloseMenu = () => setMenuOpen(false);
+
   // ✅ versión clara y segura
   function handleScrollLink(id: string) {
     return (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
@@ -47,9 +49,9 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
               Inicio
             </a>
 
-            <a href="#services" onClick={handleScrollLink("services")} className="hover:text-yellow-500">
+            <Link to="/servicios" className="hover:text-yellow-500">
               Servicios
-            </a>
+            </Link>
 
             <Link to="/contact" className="hover:text-yellow-500">
               Contáctanos
@@ -100,12 +102,12 @@ export default function Navbar({ showInfo, scrollToSection }: Props) {
             Inicio
           </a>
 
-          <a href="#services" onClick={handleScrollLink("services")}>
+          <Link to="/servicios" onClick={handleCloseMenu}>
             Servicios
-          </a>
+          </Link>
 
-          <Link to="/contact">Contáctanos</Link>
-          <Link to="/aboutUs">Sobre nosotros</Link>
+          <Link to="/contact" onClick={handleCloseMenu}>Contáctanos</Link>
+          <Link to="/aboutUs" onClick={handleCloseMenu}>Sobre nosotros</Link>
         </nav>
       </div>
     </>

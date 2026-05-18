@@ -3,18 +3,28 @@ import services from "../../assets/utilities/servicesHome.json";
 import ServicesCard from "./servicesHomeCard";
 import { useState } from "react";
 
-export default function ServicesHome() {
-  const [visibleCount, setVisibleCount] = useState(8);
+type ServicesHomeProps = {
+  initialVisible?: number;
+  allowExpand?: boolean;
+  sectionId?: string;
+};
+
+export default function ServicesHome({
+  initialVisible = 8,
+  allowExpand = true,
+  sectionId = "services-home",
+}: ServicesHomeProps) {
+  const [visibleCount, setVisibleCount] = useState(initialVisible);
 
   const handleLoadMore = () => setVisibleCount((prev) => prev + 4);
-  const handleShowLess = () => setVisibleCount(4);
+  const handleShowLess = () => setVisibleCount(initialVisible);
 
   const visibleServices = services.slice(0, visibleCount);
 
   return (
     <div
       className="bg-[#F6F6F6] flex flex-col justify-center py-10"
-      id="services"
+      id={sectionId}
     >
       {/* Título */}
       <div className="text-center px-4 mb-10">
@@ -49,23 +59,25 @@ export default function ServicesHome() {
         ))}
       </div>
 
-      <div className="flex justify-center mt-10">
-        {visibleCount < services.length ? (
-          <button
-            onClick={handleLoadMore}
-            className="px-6 py-2 bg-[#FFCC33] text-black rounded-lg font-semibold shadow hover:bg-yellow-400 transition"
-          >
-            Ver más Servicios
-          </button>
-        ) : (
-          <button
-            onClick={handleShowLess}
-            className="px-6 py-2 bg-gray-300 text-black rounded-lg font-semibold shadow hover:bg-gray-400 transition"
-          >
-            Ver menos
-          </button>
-        )}
-      </div>
+      {allowExpand && (
+        <div className="flex justify-center mt-10">
+          {visibleCount < services.length ? (
+            <button
+              onClick={handleLoadMore}
+              className="px-6 py-2 bg-[#FFCC33] text-black rounded-lg font-semibold shadow hover:bg-yellow-400 transition"
+            >
+              Ver más Servicios
+            </button>
+          ) : (
+            <button
+              onClick={handleShowLess}
+              className="px-6 py-2 bg-gray-300 text-black rounded-lg font-semibold shadow hover:bg-gray-400 transition"
+            >
+              Ver menos
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }
