@@ -26,8 +26,8 @@ jobs:
 
       - name: Verificar secrets
         run: |
-          echo "SERVER OK"
-          echo "USER OK"
+          echo "SERVER=${{ secrets.FTP_SERVER }}"
+          echo "USER=${{ secrets.FTP_USERNAME }}"
 
       - name: Deploy a Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
