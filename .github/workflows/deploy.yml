@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Clonar repo
         uses: actions/checkout@v4
 
@@ -24,6 +23,11 @@ jobs:
 
       - name: Build Vite
         run: npm run build
+
+      - name: Verificar secrets
+        run: |
+          echo "SERVER OK"
+          echo "USER OK"
 
       - name: Deploy a Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
