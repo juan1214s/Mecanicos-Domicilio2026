@@ -5,7 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "../../App.css";
-import { AnalyticsEvents, EventLabels, PageNames } from "../../constants/enums";
+import { AnalyticsEvents, EventLabels } from "../../constants/enums";
+import { getCurrentPageName, pushDataLayerEvent } from "../../utils/analytics";
 
 export default function Banner() {
   return (
@@ -51,11 +52,11 @@ export default function Banner() {
           href="tel:+573177123333"
           aria-label="Llamar al número de atención al cliente 3177123333"
           onClick={() => {
-            window.dataLayer?.push({
+            pushDataLayerEvent({
               event: AnalyticsEvents.CALL_CLICK,
               event_category: "conversion",
               event_label: EventLabels.BANNER,
-              page_name: PageNames.HOME,
+              page_name: getCurrentPageName(),
             })
           }}
           className="px-6 py-3 bg-[#FFCC33] text-black font-bold rounded-lg shadow-xl hover:scale-105 transition"

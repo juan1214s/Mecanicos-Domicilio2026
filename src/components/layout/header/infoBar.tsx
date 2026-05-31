@@ -1,5 +1,6 @@
 import { ClockIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/24/outline";
-import { AnalyticsEvents, EventLabels, PageNames } from "../../../constants/enums";
+import { AnalyticsEvents, EventLabels } from "../../../constants/enums";
+import { getCurrentPageName, pushDataLayerEvent } from "../../../utils/analytics";
 
 export default function InfoBar({ showInfo }: { showInfo: boolean }) {
   return (
@@ -29,11 +30,11 @@ export default function InfoBar({ showInfo }: { showInfo: boolean }) {
           <a
             href="tel:+573177123333"
             onClick={() => {
-              window.dataLayer?.push({
+              pushDataLayerEvent({
                 event: AnalyticsEvents.CALL_CLICK,
                 event_category: "conversion",
                 event_label: EventLabels.HEADER,
-                page_name: PageNames.HOME,
+                page_name: getCurrentPageName(),
               })
             }}
             className="

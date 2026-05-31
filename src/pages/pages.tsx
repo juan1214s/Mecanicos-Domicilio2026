@@ -17,15 +17,6 @@ export default function Pages() {
   const [showMap, setShowMap] = useState(false);
   const [showHeavy, setShowHeavy] = useState(false);
 
-  // PAGE VIEW
-  useEffect(() => {
-    window.dataLayer?.push({
-      event: "page_view",
-      page_path: window.location.pathname,
-      page_title: document.title
-    });
-  }, []);
-
   // CONTROL DE CARGA POR SCROLL
   useEffect(() => {
     const onScroll = () => {

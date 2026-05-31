@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { AnalyticsEvents, EventLabels, PageNames } from "../../constants/enums";
 import { lazy, Suspense } from "react";
+import { getCurrentPageName, pushDataLayerEvent } from "../../utils/analytics";
 
 const GoogleMapComponent = lazy(() => import("../../components/Ui/GoogleMapComponent"));
 
@@ -107,6 +108,13 @@ export default function Contact() {
 
       setErrors({});
 
+      pushDataLayerEvent({
+        event: AnalyticsEvents.FORM_SUBMIT,
+        event_category: "conversion",
+        event_label: EventLabels.CONTACT_FORM,
+        page_name: PageNames.CONTACT,
+      });
+
       // limpiar mensaje después de 5s
       setTimeout(() => setSuccess(null), 5000);
 
@@ -116,14 +124,6 @@ export default function Contact() {
       setSubmitting(false);
     }
   };
-
-  useEffect(() => {
-    window.dataLayer?.push({
-      event: "page_view",
-      page_path: window.location.pathname,
-      page_title: document.title
-    });
-  }, []);
 
   return (
     <section id="contact" className="bg-white py-16 mt-5 md:mt-15">
@@ -229,8 +229,8 @@ export default function Contact() {
                     💬 Descripción:
                     ${form.message}`
                   );
-                  window.dataLayer?.push({
-                    event: AnalyticsEvents.FORM_SUBMIT,
+                  pushDataLayerEvent({
+                    event: AnalyticsEvents.WHATSAPP_CLICK,
                     event_category: "conversion",
                     event_label: EventLabels.CONTACT_FORM,
                     page_name: PageNames.CONTACT,
@@ -263,7 +263,18 @@ export default function Contact() {
               <h3 className="font-semibold text-lg">Atención rápida</h3>
               <p className="text-gray-600 mt-2">
                 Teléfono:&nbsp;
-                <a href={`tel:${PHONE_NUMBER}`} className="font-medium text-blue-600">
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  onClick={() => {
+                    pushDataLayerEvent({
+                      event: AnalyticsEvents.CALL_CLICK,
+                      event_category: "conversion",
+                      event_label: EventLabels.CONTACT_FORM,
+                      page_name: getCurrentPageName(),
+                    });
+                  }}
+                  className="font-medium text-blue-600"
+                >
                   {PHONE_NUMBER}
                 </a>
               </p>
