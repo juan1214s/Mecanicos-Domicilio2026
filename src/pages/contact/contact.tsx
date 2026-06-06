@@ -220,15 +220,6 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={() => {
-                  const text = encodeURIComponent(
-                    `Hola 👋, necesito un servicio de mecánico a domicilio.
-
-                    👤 Nombre: ${form.name}
-                    📞 Teléfono: ${form.phone}
-                    🚗 Servicio: ${form.service}
-                    💬 Descripción:
-                    ${form.message}`
-                  );
                   pushDataLayerEvent({
                     event: AnalyticsEvents.WHATSAPP_CLICK,
                     event_category: "conversion",
@@ -238,7 +229,7 @@ export default function Contact() {
 
                   // abrir WhatsApp
                   window.open(
-                    `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`,
+                    `https://wa.me/${WHATSAPP_NUMBER}`,
                     "_blank"
                   );
                 }}
