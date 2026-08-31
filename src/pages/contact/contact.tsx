@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { AnalyticsEvents, EventLabels, PageNames } from "../../constants/enums";
 import { lazy, Suspense } from "react";
 import { getCurrentPageName, pushDataLayerEvent } from "../../utils/analytics";
+import Reveal from "../../components/Ui/Reveal";
 
 const GoogleMapComponent = lazy(() => import("../../components/Ui/GoogleMapComponent"));
 
@@ -35,9 +35,11 @@ export default function Contact() {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const WHATSAPP_NUMBER = "573177123333";
-  const PHONE_NUMBER = "+57 317 712 3333";
+  const PHONE_NUMBER = "+57 317 712 3333"; // formato para mostrar
+  const PHONE_TEL = "+573177123333"; // formato E.164 para el enlace tel:
 
   const validate = () => {
     const newErrors: typeof errors = {};
@@ -65,6 +67,7 @@ export default function Contact() {
 
     setSubmitting(true);
     setSuccess(null);
+    setErrorMsg(null);
 
     try {
       // 🔥 convertir a formato compatible con Formspree
@@ -87,9 +90,9 @@ export default function Contact() {
         body,
       });
 
-      const data = await res.json();
-
-      if (!res.ok || !data.ok) {
+      // Formspree responde 2xx en éxito; el cuerpo puede o no traer { ok: true }.
+      // Solo tratamos como error un status HTTP no correcto.
+      if (!res.ok) {
         throw new Error("Error en el envío");
       }
 
@@ -118,8 +121,8 @@ export default function Contact() {
       // limpiar mensaje después de 5s
       setTimeout(() => setSuccess(null), 5000);
 
-    } catch (err) {
-      setSuccess("❗ Hubo un error. Intenta de nuevo o escríbenos por WhatsApp.");
+    } catch {
+      setErrorMsg("❗ Hubo un error. Intenta de nuevo o escríbenos por WhatsApp.");
     } finally {
       setSubmitting(false);
     }
@@ -128,28 +131,18 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-white py-16 mt-5 md:mt-15">
       <div className="max-w-6xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-8"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Contáctanos o solicita tu mecánico</h2>
+        <Reveal className="text-center mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Contáctanos o solicita tu mecánico a domicilio en Medellín</h1>
           <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
             Escríbenos tu consulta o solicita cotización. Respuesta rápida por WhatsApp 📲
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
           {/* ==== FORMULARIO ==== */}
-          <motion.form
+          <form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: -15 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
             className="bg-gray-50 p-6 rounded-xl shadow space-y-4"
           >
             {/* Nombre */}
@@ -240,22 +233,17 @@ export default function Contact() {
             </div>
 
             {success && <p className="text-sm text-green-700 mt-2">{success}</p>}
-          </motion.form>
+            {errorMsg && <p className="text-sm text-red-600 mt-2">{errorMsg}</p>}
+          </form>
 
           {/* ==== CONTACTO LATERAL ==== */}
-          <motion.aside
-            initial={{ opacity: 0, x: 15 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6"
-          >
+          <aside className="space-y-6">
             <div className="bg-white p-5 rounded-xl shadow">
               <h3 className="font-semibold text-lg">Atención rápida</h3>
               <p className="text-gray-600 mt-2">
                 Teléfono:&nbsp;
                 <a
-                  href={`tel:${PHONE_NUMBER}`}
+                  href={`tel:${PHONE_TEL}`}
                   onClick={() => {
                     pushDataLayerEvent({
                       event: AnalyticsEvents.CALL_CLICK,
@@ -269,7 +257,7 @@ export default function Contact() {
                   {PHONE_NUMBER}
                 </a>
               </p>
-              <p className="text-gray-600 mt-2">Horarios: <b>Lun - Vie 05:00 - 18:00</b></p>
+              <p className="text-gray-600 mt-2">Horarios: <b>Lun - Vie 07:00 - 17:00 · Sáb - Dom 07:00 - 14:00</b></p>
             </div>
 
             {/* Mapa */}
@@ -288,7 +276,7 @@ export default function Contact() {
                 <li>Transferencia</li>
               </ul>
             </div>
-          </motion.aside>
+          </aside>
         </div>
       </div>
     </section>

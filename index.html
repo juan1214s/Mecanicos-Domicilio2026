@@ -21,8 +21,6 @@
   <link rel="icon" type="image/webp" href="/img/logo2.webp" />
   <link rel="canonical" href="https://mecanicoasdomiciliomedellin.com/" />
   <link rel="preload" as="image" href="/img/img1.webp" type="image/webp" fetchpriority="high">
-  <link rel="preload" href="/assets/index.css" as="style">
-  <link rel="stylesheet" href="/assets/index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mecánicos a Domicilio Medellín | Reparación Automotriz</title>
   <meta name="description"
@@ -31,7 +29,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Mecánicos a Domicilio Medellín" />
   <meta property="og:description" content="Atención rápida en tu casa o trabajo." />
-  <meta property="og:image" content="https://mecanicoasdomiciliomedellin.com/img/preview.webp" />
+  <meta property="og:image" content="https://mecanicoasdomiciliomedellin.com/img/img1.webp" />
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://mecanicoasdomiciliomedellin.com/" /> <!-- ✔ corregido -->
   <meta property="og:type" content="website" />
@@ -41,15 +39,17 @@
   "@context": "https://schema.org",
   "@type": "AutoRepair",
   "name": "Mecánicos a Domicilio Medellín",
-  "image": "https://mecanicoasdomiciliomedellin.com/img/preview.webp",
+  "image": "https://mecanicoasdomiciliomedellin.com/img/img1.webp",
   "url": "https://mecanicoasdomiciliomedellin.com",
   "telephone": "+573177123333",
   "description": "Servicio de mecánica automotriz a domicilio en Medellín. Reparación de motor, frenos, batería, sincronización y más.",
-  
+
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Cra. 45 #29-50, La Candelaria",
     "addressLocality": "Medellín",
     "addressRegion": "Antioquia",
+    "postalCode": "050010",
     "addressCountry": "CO"
   },
 
@@ -64,14 +64,20 @@
     "name": "Medellín"
   },
 
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
-    ],
-    "opens": "07:00",
-    "closes": "18:00"
-  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "07:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "07:00",
+      "closes": "14:00"
+    }
+  ],
 
   "sameAs": [
     "https://www.instagram.com/mecanicosdomiciliomedellin/",

@@ -1,6 +1,4 @@
-@import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
-@source "../.flowbite-react/class-list.json";
+/* Tailwind y el plugin de flowbite se cargan una sola vez desde src/index.css */
 
 .navbar-custom {
     background-color: #ffffff;

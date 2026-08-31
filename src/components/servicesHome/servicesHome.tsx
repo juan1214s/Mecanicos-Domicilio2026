@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import services from "../../assets/utilities/servicesHome.json";
 import ServicesCard from "./servicesHomeCard";
 import { useState } from "react";
+import Reveal from "../Ui/Reveal";
 
 type ServicesHomeProps = {
   initialVisible?: number;
@@ -40,22 +40,13 @@ export default function ServicesHome({
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
         {visibleServices.map((service, index) => (
-          <motion.div
-            key={service.id}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.2,
-              delay: index * 0.1,
-            }}
-            viewport={{ once: false, amount: 0.2 }}
-          >
+          <Reveal key={service.id} delay={index * 100} repeat>
             <ServicesCard
               title={service.title}
               description={service.description}
               img={service.img}
             />
-          </motion.div>
+          </Reveal>
         ))}
       </div>
 

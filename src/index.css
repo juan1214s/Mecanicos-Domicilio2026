@@ -1,3 +1,52 @@
 @import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
-@source "../.flowbite-react/class-list.json";
+
+/* --- Animación "aparecer al hacer scroll" (reemplazo de framer-motion) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
+}
+.reveal--in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Acordeón FAQ */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.25s ease, opacity 0.25s ease;
+}
+.faq-panel.faq-panel--open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.faq-panel > div {
+  overflow: hidden;
+}
+
+/* Popover de partes del vehículo */
+.pop-in {
+  animation: popIn 0.25s ease both;
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .faq-panel,
+  .pop-in {
+    transition: none !important;
+    animation: none !important;
+  }
+}

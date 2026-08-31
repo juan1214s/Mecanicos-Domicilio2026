@@ -7,7 +7,9 @@ export default function AboutSection() {
         
         {/* Título */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-900">Sobre Nosotros</h2>
+          <h1 className="text-4xl font-extrabold text-gray-900">
+            Sobre Nosotros — Mecánicos a Domicilio en Medellín
+          </h1>
           <div className="w-24 h-1 bg-[#FFCC33] mx-auto mt-3"></div>
           <p className="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
             Más de 12 años ofreciendo soluciones mecánicas rápidas, confiables y a domicilio.

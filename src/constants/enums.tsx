@@ -10,6 +10,7 @@ export const PageNames = {
   HOME: "home",
   ABOUT: "about",
   CONTACT: "contact",
+  SERVICES: "services",
 }
 
 export const EventLabels = {

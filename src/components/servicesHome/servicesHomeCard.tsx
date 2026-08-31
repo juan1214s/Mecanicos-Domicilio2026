@@ -1,4 +1,3 @@
-import { Card } from "flowbite-react";
 import type ServicesCardDto from "../../Dto/serviceDto";
 
 export default function ServicesHomeCard({
@@ -7,12 +6,12 @@ export default function ServicesHomeCard({
   img,
 }: ServicesCardDto) {
   return (
-    <Card
+    <div
       className="
-        cardService-custom bg-white rounded-lg shadow-md hover:shadow-xl 
-        hover:scale-105 transition-transform duration-300 overflow-hidden 
+        cardService-custom bg-white rounded-lg shadow-md hover:shadow-xl
+        hover:scale-105 transition-transform duration-300 overflow-hidden
         max-w-sm mx-auto border-0 flex flex-col
-        min-h-fit md:h-[420px]         /* móvil crece, PC fijo */
+        min-h-fit md:h-[420px]
       "
     >
       <img
@@ -21,11 +20,7 @@ export default function ServicesHomeCard({
         loading="lazy"
         width={400}
         height={224}
-        className="
-          w-full object-cover 
-          h-auto md:h-56                  /* imagen pequeña en móvil, mayor en pc */
-          rounded-t-lg
-        "
+        className="w-full object-cover h-auto md:h-56 rounded-t-lg"
       />
 
       <div className="p-4 md:p-5 flex flex-col gap-3 grow">
@@ -34,6 +29,6 @@ export default function ServicesHomeCard({
           {description}
         </p>
       </div>
-    </Card>
+    </div>
   );
 }

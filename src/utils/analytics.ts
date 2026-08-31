@@ -10,6 +10,7 @@ export function pushDataLayerEvent(payload: AnalyticsPayload): void {
 
 export function getCurrentPageName(pathname: string = window.location.pathname): string {
   if (pathname === "/") return PageNames.HOME;
+  if (pathname.startsWith("/servicios")) return PageNames.SERVICES;
   if (pathname.startsWith("/contact")) return PageNames.CONTACT;
   if (pathname.startsWith("/aboutUs")) return PageNames.ABOUT;
   return pathname;
