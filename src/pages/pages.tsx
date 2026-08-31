@@ -1,6 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import WhatsappFixedIcon from "../components/Ui/whatsapp";
 
 const Banner = lazy(() => import("../components/Ui/banner"));
 const Services = lazy(() => import("../components/services/services"));
@@ -24,7 +23,7 @@ export default function Pages() {
       if (window.scrollY > 1500) setShowMap(true);
     };
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -98,8 +97,6 @@ export default function Pages() {
           <GoogleMapComponent height="421px" />
         </Suspense>
       )}
-
-      <WhatsappFixedIcon />
     </div>
   );
 }

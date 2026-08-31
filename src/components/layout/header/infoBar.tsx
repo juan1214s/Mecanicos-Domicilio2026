@@ -1,4 +1,4 @@
-import { ClockIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import { Clock, Phone, MapPin } from "lucide-react";
 import { AnalyticsEvents, EventLabels } from "../../../constants/enums";
 import { getCurrentPageName, pushDataLayerEvent } from "../../../utils/analytics";
 
@@ -11,18 +11,18 @@ export default function InfoBar({ showInfo }: { showInfo: boolean }) {
     >
       <div className="w-full flex flex-col md:flex-row justify-between items-center gap-3 px-4">
         <div className="flex items-center gap-2">
-          <ClockIcon className="h-5 w-5" />
+          <Clock className="h-5 w-5" />
           <p className="mx-2">Lun - Vie: 07:00 AM – 05:00 PM</p>
           <p>Sáb - Dom: 07:00 AM – 02:00 PM</p>
         </div>
 
         <div className="flex items-center gap-2">
-          <PhoneIcon className="h-5 w-5" />
+          <Phone className="h-5 w-5" />
           <p>+57 317 712 3333</p>
         </div>
 
         <div className="flex items-center gap-2">
-          <MapPinIcon className="h-5 w-5" />
+          <MapPin className="h-5 w-5" />
           <p>Cra. 45 #29-50, La Candelaria, Medellín, Antioquia</p>
         </div>
 

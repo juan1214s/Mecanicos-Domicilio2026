@@ -10,7 +10,7 @@ import { getCurrentPageName, pushDataLayerEvent } from "../../utils/analytics";
 
 export default function Banner() {
   return (
-    <div className="relative" role="main">
+    <div className="relative">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -32,9 +32,15 @@ export default function Banner() {
             />
 
             <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-6">
-              <h1 className="text-white text-2xl md:text-4xl font-bold mb-2">
-                {slide.title}
-              </h1>
+              {index === 0 ? (
+                <h1 className="text-white text-2xl md:text-4xl font-bold mb-2">
+                  {slide.title}
+                </h1>
+              ) : (
+                <p className="text-white text-2xl md:text-4xl font-bold mb-2">
+                  {slide.title}
+                </p>
+              )}
 
               {slide.subtitle && (
                 <p className="text-white text-sm md:text-xl max-w-2xl mb-4 p-5">

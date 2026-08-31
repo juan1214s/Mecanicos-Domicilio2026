@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 import comments from "../../assets/utilities/comments.json";
 import ReviewsCard from "./reviewsCard";
+import Reveal from "../Ui/Reveal";
 
 export default function Reviews() {
   const [visibleCount, setVisibleCount] = useState(3);
@@ -28,18 +28,9 @@ export default function Reviews() {
         {/* Grid con animación */}
         <div className="grid md:grid-cols-3 gap-8">
           {visibleComments.map((comment, index) => (
-            <motion.div
-              key={comment.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.4,
-                delay: index * 0.15
-              }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
+            <Reveal key={comment.id} delay={index * 150}>
               <ReviewsCard {...comment} />
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 

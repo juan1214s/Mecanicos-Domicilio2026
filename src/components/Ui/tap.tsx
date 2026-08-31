@@ -1,28 +1,24 @@
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
-import VerifiedIcon from "@mui/icons-material/Verified";
-import HandymanIcon from "@mui/icons-material/Handyman";
-import BuildIcon from "@mui/icons-material/Build";
+import { useState } from "react";
+import { Headset, Car, BadgeCheck, Wrench, Hammer } from "lucide-react";
 import tabContentjson from "../../assets/utilities/tabContent.json";
-import React from "react";
-import { motion } from "framer-motion";
+
+const TABS = [
+  { label: "Atención", Icon: Headset },
+  { label: "Servicio a Domicilio", Icon: Car },
+  { label: "Calidad", Icon: BadgeCheck },
+  { label: "Equipo", Icon: Wrench },
+] as const;
 
 export default function TapComponent() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
+  const [value, setValue] = useState(0);
   const tabContent = tabContentjson;
+
   return (
     <div className="bg-[#F6F6F6]">
       <div className="flex flex-col items-center justify-center text-center p-6 ">
-        <h1 className="font-bold text-4xl">
+        <h2 className="font-bold text-4xl">
           Reparamos, Cuidamos y Protegemos Tu Vehículo
-        </h1>
+        </h2>
         <p className="mx-auto max-w-2xl text-base">
           Servicio mecánico profesional, transparente y seguro. Cuidamos tu
           vehículo con experiencia, tecnología y atención responsable para que
@@ -32,62 +28,52 @@ export default function TapComponent() {
 
       {/* Tabs */}
       <div className="flex justify-center w-full mt-6">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="scrollable"
-          scrollButtons="auto"
-          allowScrollButtonsMobile
-          sx={{
-            "& .MuiTabs-scrollButtons": {
-              color: "#F5C32E", // color de las flechas
-            },
-          }}
+        <div
+          role="tablist"
+          aria-label="Nuestros valores"
+          className="flex gap-4 md:gap-10 overflow-x-auto px-4 pb-2"
         >
-          <Tab
-            icon={<SupportAgentIcon sx={{ fontSize: 70 }} />}
-            label="Atención"
-            sx={{ mx: 4 }}
-          />
-          <Tab
-            icon={<DirectionsCarIcon sx={{ fontSize: 70 }} />}
-            label="Servicio a Domicilio"
-            sx={{ mx: 4 }}
-          />
-          <Tab
-            icon={<VerifiedIcon sx={{ fontSize: 70 }} />}
-            label="Calidad"
-            sx={{ mx: 4 }}
-          />
-          <Tab
-            icon={<HandymanIcon sx={{ fontSize: 70 }} />}
-            label="Equipo"
-            sx={{ mx: 4 }}
-          />
-        </Tabs>
+          {TABS.map((t, i) => {
+            const active = i === value;
+            const Icon = t.Icon;
+            return (
+              <button
+                key={t.label}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                onClick={() => setValue(i)}
+                className={`flex flex-col items-center gap-2 shrink-0 px-3 py-2 border-b-2 transition ${
+                  active
+                    ? "border-[#E6B800] text-[#E6B800] font-bold"
+                    : "border-transparent text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                <Icon size={56} strokeWidth={1.5} aria-hidden="true" />
+                <span className="text-sm">{t.label}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
-      {/* Contenido dinámico con animación */}
-      <motion.div
+
+      {/* Contenido dinámico */}
+      <div
         key={value}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5 }}
-        className="mt-6 shadow-md rounded-lg max-w-6xl mx-auto"
+        className="pop-in mt-6 shadow-md rounded-lg max-w-6xl mx-auto"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-[#393939]">
           <div className="text-center md:text-left p-5">
-            <h2 className="text-3xl font-bold mb-3 text-[#FFCC33]">
+            <h3 className="text-3xl font-bold mb-3 text-[#FFCC33]">
               {tabContent[value].title}
-            </h2>
+            </h3>
             <p className="text-white">{tabContent[value].text}</p>
 
             {tabContent[value].services && (
               <ul className="text-white mt-4 grid grid-cols-1 gap-2">
                 {tabContent[value].services.map((item, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <BuildIcon
-                      style={{ color: "#F5C32E", fontSize: "0.9rem" }}
-                    />
+                    <Hammer size={14} color="#F5C32E" aria-hidden="true" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -106,7 +92,7 @@ export default function TapComponent() {
             />
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

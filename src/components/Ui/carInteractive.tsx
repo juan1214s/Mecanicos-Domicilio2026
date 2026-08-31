@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
 import { Cog, Wrench, Cable, Disc, ChevronRight } from "lucide-react";
 
 type PartId = "gearbox" | "alternator" | "engine" | "brakes";
@@ -68,16 +67,15 @@ export default function CarInteractiveProUpdated() {
         <div className="relative flex-1">
 
           {selected && (
-            <motion.div
-              initial={{ opacity: 0, y: -6 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="absolute z-30 top-4 left-4 w-80 bg-white border rounded-xl shadow p-4"
+            <div
+              key={selected.id}
+              className="pop-in absolute z-30 top-4 left-4 w-80 bg-white border rounded-xl shadow p-4"
             >
               <h3 className="font-semibold text-lg">{selected.label}</h3>
               <p className="text-sm mt-2">
                 {descriptions[selected.id]}
               </p>
-            </motion.div>
+            </div>
           )}
 
           {/* IMAGEN */}

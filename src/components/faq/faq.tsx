@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 import faqs from "../../assets/utilities/faq.json";
 
 export default function FAQ() {
@@ -47,29 +47,23 @@ export default function FAQ() {
                   <h3 className="text-white font-semibold text-lg flex items-center gap-2">
                     <span className="text-[#F5C32E]">•</span> {item.q}
                   </h3>
-                  <motion.span
-                    animate={{ rotate: isOpen ? 90 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-[#F5C32E] text-xl"
-                  >
-                    ▶
-                  </motion.span>
+                  <ChevronRight
+                    className="text-[#F5C32E] shrink-0 transition-transform duration-200"
+                    style={{ transform: isOpen ? "rotate(90deg)" : "none" }}
+                    aria-hidden="true"
+                  />
                 </button>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      id={`faq-panel-${index}`}
-                      role="region"
-                      aria-labelledby={`faq-button-${index}`}
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="text-gray-300 mt-3 overflow-hidden"
-                    >
-                      {item.a}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+
+                <div
+                  id={`faq-panel-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-button-${index}`}
+                  className={`faq-panel ${isOpen ? "faq-panel--open" : ""}`}
+                >
+                  <div>
+                    <div className="text-gray-300 mt-3">{item.a}</div>
+                  </div>
+                </div>
               </div>
             );
           })}
