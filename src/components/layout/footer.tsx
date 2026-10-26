@@ -51,7 +51,7 @@ export function FooterComponent() {
               <ul className="space-y-3 text-gray-400 text-sm">
                 <li className="flex items-center gap-2">
                   <Phone size={16} className="text-[#F5C32E]" />
-                  +57 317 712 3333
+                  +57 300 956 2700
                 </li>
                 <li className="flex items-center gap-2">
                   <MapPin size={16} className="text-[#F5C32E]" />

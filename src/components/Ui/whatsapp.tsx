@@ -18,7 +18,7 @@ function WhatsappGlyph({ size = 32 }: { size?: number }) {
 export default function WhatsappFixedIcon() {
   return (
     <a
-      href="https://wa.me/573177123333"
+      href="https://wa.me/573009562700"
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => {

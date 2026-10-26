@@ -55,8 +55,8 @@ export default function Banner() {
       {/* CTA GLOBAL */}
       <div className="absolute bottom-35 left-1/2 -translate-x-1/2 z-10">
         <a
-          href="tel:+573177123333"
-          aria-label="Llamar al número de atención al cliente 3177123333"
+          href="tel:+573009562700"
+          aria-label="Llamar al número de atención al cliente 3009562700"
           onClick={() => {
             pushDataLayerEvent({
               event: AnalyticsEvents.CALL_CLICK,

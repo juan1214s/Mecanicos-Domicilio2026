@@ -37,9 +37,9 @@ export default function Contact() {
   const [success, setSuccess] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const WHATSAPP_NUMBER = "573177123333";
-  const PHONE_NUMBER = "+57 317 712 3333"; // formato para mostrar
-  const PHONE_TEL = "+573177123333"; // formato E.164 para el enlace tel:
+  const WHATSAPP_NUMBER = "573009562700"; // formato E.164 para el enlace wa.me
+  const PHONE_NUMBER = "+57 300 956 2700"; // formato para mostrar
+  const PHONE_TEL = "+573009562700"; // formato E.164 para el enlace tel:
 
   const validate = () => {
     const newErrors: typeof errors = {};

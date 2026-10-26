@@ -20,7 +20,7 @@ export default function CTASection() {
 
         {/* BOTÓN */}
         <a
-          href="tel:+573177123333" onClick={() => {
+          href="tel:+573009562700" onClick={() => {
             pushDataLayerEvent({
               event: AnalyticsEvents.CALL_CLICK,
               event_category: "conversion",

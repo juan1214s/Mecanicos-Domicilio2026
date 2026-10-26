@@ -18,7 +18,7 @@ export default function InfoBar({ showInfo }: { showInfo: boolean }) {
 
         <div className="flex items-center gap-2">
           <Phone className="h-5 w-5" />
-          <p>+57 317 712 3333</p>
+          <p>+57 300 956 2700</p>
         </div>
 
         <div className="flex items-center gap-2">
